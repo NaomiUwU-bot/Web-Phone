@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cart</title>
+	<link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+	<header class="header">
+		<h1>Cửa hàng trực tuyến</h1>
+	</header>
+	<main class="checkout">
+        <div class="info-tab active">
+            <div class="checkout-products">
+                <h3>Danh sách sản phẩm</h3>
+                <div id ="checkout-products__list"></div>
+            </div>
+            <div class="customer-info">
+                <h3>Thông tin khách hàng</h3>
+                <form id="customer-info__form">
+                    <div id="customer-info__name">
+                        <span>Họ và tên</span>
+                        <input type="text" id="customer-name" placeholder="Họ và tên" required>
+                    </div>
+                    <div id="customer-info__phone">
+                        <span>Số điện thoại</span>
+                        <input type="tel" id="customer-phone" placeholder="Số điện thoại" required>
+                    </div>
+                    <div id="customer-info__email">
+                        <span>Email</span>
+                        <input type="email" id="customer-email" placeholder="Email" required>
+                    </div>
+                    <div id="customer-info__address" >
+                        <span>Địa chỉ</span>
+                        <textarea id="customer-address" placeholder="Địa chỉ" required></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="checkout-summary">
+                <span id="checkout-summary__total">Tạm tính: </span>
+                <button id="checkout-summary__confirm-btn">Tiếp tục</button>
+            </div>
+        </div>
+        <div class ="payment-tab hidden">
+            <h3>Phương thức thanh toán</h3>
+        </div>
+	</main>
+	<script src="checkout.js"></script>
+</body>
+</html>

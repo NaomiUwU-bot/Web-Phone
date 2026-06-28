@@ -5,6 +5,7 @@ const products = [
     { id: 4, name: "IPhone17ProMax", price: 36, quantity: 1, img_src: "phone_placeholder.jpg", checked: false }
 ];
 
+
 let cart =[];
 // lấy thể hiện từ html cho dễ dùng
 const productList = document.getElementById('product-list');
@@ -16,7 +17,7 @@ function renderProducts(){
 	productList.innerHTML = ''
 	if (products.length === 0){
 		productList.innerHTML = `
-			<h1 style ="text-align: center;"> Giở hàng của bạn đang trống</h1>
+			<h1 style ="text-align: center;"> Giỏ hàng của bạn đang trống</h1>
 		`
 		cartSummary.style.display = 'none';
 	}
@@ -24,7 +25,6 @@ function renderProducts(){
 		cartSummary.style.display = 'flex';
 		products.forEach((product,index) =>{
 			const productDiv = document.createElement('div');
-			productDiv.className= 'products-section__list-items';
 			productDiv.innerHTML = `
 				<div class="cart-item">
 			        <div class="cart-item__checkbox-wrap">
@@ -89,6 +89,12 @@ function renderProducts(){
 		});
 	}
 	
+}
+
+function checkout(){
+	const selectedProducts = products.filter(product => product.checked);
+	localStorage.setItem('selectedProducts', JSON.stringify(selectedProducts))
+	window.location.href = 'checkout.html';
 }
 
 function updateCartUI() {

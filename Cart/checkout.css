@@ -158,5 +158,39 @@ header{
     resize: none;
 }
 
+#customer-info__address textarea {
+    resize: none;
+}
 
+.checkout-summary__back-btn{
+    float: right;
+    background-color: var(--button-color);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 40px;
+    width: 120px;
+}
+
+.checkout-summary__confirm-btn{
+    float: right;
+    background-color: var(--button-color);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 40px;
+    width: 120px;
+}
+
+.checkout-summary{
+    position:sticky;
+    width:100%;
+    align-items:center;
+    display:flex;
+    justify-content:space-between;
+    z-index:999;
+    background-color: var(--pale-blue-background-color);
+    height: 60px;
+    bottom: 0;
+}
 

@@ -1,6 +1,12 @@
 const selectedProducts = JSON.parse(localStorage.getItem('selectedProducts')) || [];
 const checkoutProductsList = document.getElementById('checkout-products__list');
 const checkoutSummaryTotal = document.getElementById('checkout-summary__total');
+const infoTab = document.getElementById('info-tab');
+const paymentTab = document.getElementById('payment-tab');
+const backBtn = document.getElementById('checkout-summary__back-btn');
+const confirmBtn = document.getElementById('checkout-summary__confirm-btn');
+
+localStorage.setItem('state','info');
 
 function renderProducts(){
     selectedProducts.forEach((product,index) =>{
@@ -15,7 +21,6 @@ function renderProducts(){
                     <div class="cart-item__header">
                         <h3 class="cart-item__name">${product.name}</h3>
                     </div>
-
                     <div class="cart-item__price-row">
                         <div class="cart-item__prices">
                             <span class="cart-item__price-current">${product.price}₫</span>
@@ -31,6 +36,32 @@ function renderProducts(){
         `;
         checkoutProductsList.appendChild(productDiv);		
     });
+}
+
+function step(action = null){
+    if(action === 'back'){
+        localStorage.setItem('state', 'info');
+        backBtn.classList.add('hidden');
+        infoTab.classList.remove('hidden');
+        paymentTab.classList.add('hidden');
+        confirmBtn.innerText = 'Tiếp tục';
+    }
+    else{
+        if (localStorage.getItem('state') === 'info') {
+            localStorage.setItem('state', 'payment');
+            infoTab.classList.add('hidden');
+            paymentTab.classList.remove('hidden');
+            backBtn.classList.remove('hidden');
+            confirmBtn.innerText = 'Thanh toán';
+        }else {
+            localStorage.setItem('state', 'done');
+            window.alert('Thanh toan thanh cong');
+            window.location.href = 'cart.html';
+            backBtn.classList.add('hidden');
+            
+       }
+    }
+    
 }
 
 let total = 0;

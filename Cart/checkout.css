@@ -162,7 +162,17 @@ header{
     resize: none;
 }
 
-.checkout-summary__back-btn{
+#checkout-summary__back-btn{
+    float: right;
+    background-color: #666666;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 40px;
+    width: 120px;
+}
+
+#checkout-summary__confirm-btn{
     float: right;
     background-color: var(--button-color);
     color: white;
@@ -171,17 +181,11 @@ header{
     height: 40px;
     width: 120px;
 }
-
-.checkout-summary__confirm-btn{
-    float: right;
-    background-color: var(--button-color);
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    height: 40px;
-    width: 120px;
+#checkout-summary__btn-wrap{
+    display:flex;
+    float:right;
+    gap: 12px;
 }
-
 .checkout-summary{
     position:sticky;
     width:100%;

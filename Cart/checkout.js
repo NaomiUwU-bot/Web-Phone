@@ -1,10 +1,12 @@
 const selectedProducts = JSON.parse(localStorage.getItem('selectedProducts')) || [];
-const checkoutProductsList = document.getElementById('checkout-products__list');
-const checkoutSummaryTotal = document.getElementById('checkout-summary__total');
-const infoTab = document.getElementById('info-tab');
-const paymentTab = document.getElementById('payment-tab');
-const backBtn = document.getElementById('checkout-summary__back-btn');
-const confirmBtn = document.getElementById('checkout-summary__confirm-btn');
+const checkoutProductsListEl = document.getElementById('checkout-products__list');
+const checkoutSummaryTotalEl = document.getElementById('checkout-summary__total');
+const infoTabEl = document.getElementById('info-tab');
+const paymentTabEl = document.getElementById('payment-tab');
+const backBtnEl = document.getElementById('checkout-summary__back-btn');
+const confirmBtnEl = document.getElementById('checkout-summary__confirm-btn');
+
+
 
 localStorage.setItem('state','info');
 
@@ -34,39 +36,51 @@ function renderProducts(){
                     </div>
             </div>
         `;
-        checkoutProductsList.appendChild(productDiv);		
+        checkoutProductsListEl.appendChild(productDiv);		
     });
 }
 
-function step(action = null){
-    if(action === 'back'){
-        localStorage.setItem('state', 'info');
-        backBtn.classList.add('hidden');
-        infoTab.classList.remove('hidden');
-        paymentTab.classList.add('hidden');
-        confirmBtn.innerText = 'Tiếp tục';
+const paymentRadioEls = document.querySelectorAll('input[name="payment-method"]');
+const qrCodeContainer = document.getElementById('qr-code-container');
+paymentRadioEls.forEach(radio=>{
+    radio.addEventListener('change', function(e){
+        if (e.target.value === 'qr' && e.target.checked) {
+            qrCodeContainer.classList.remove('hidden');
+        } else {
+            qrCodeContainer.classList.add('hidden');
+        }
+    });
+});
+
+
+
+backBtnEl.addEventListener('click', function(){
+    localStorage.setItem('state', 'info');
+    backBtnEl.classList.add('hidden');
+    infoTabEl.classList.remove('hidden');
+    paymentTabEl.classList.add('hidden');
+    confirmBtnEl.innerText = 'Tiếp tục';
+});
+
+confirmBtnEl.addEventListener('click', function(){
+    if (localStorage.getItem('state') === 'info') {
+        localStorage.setItem('state', 'payment');
+        infoTabEl.classList.add('hidden');
+        paymentTabEl.classList.remove('hidden');
+        backBtnEl.classList.remove('hidden');
+        confirmBtnEl.innerText = 'Thanh toán';
+    }else{
+        localStorage.setItem('state', 'done');
+        window.alert('Thanh toan thanh cong');
+        window.location.href = 'cart.html';
+        backBtnEl.classList.add('hidden');
     }
-    else{
-        if (localStorage.getItem('state') === 'info') {
-            localStorage.setItem('state', 'payment');
-            infoTab.classList.add('hidden');
-            paymentTab.classList.remove('hidden');
-            backBtn.classList.remove('hidden');
-            confirmBtn.innerText = 'Thanh toán';
-        }else {
-            localStorage.setItem('state', 'done');
-            window.alert('Thanh toan thanh cong');
-            window.location.href = 'cart.html';
-            backBtn.classList.add('hidden');
-            
-       }
-    }
-    
-}
+});
+
 
 let total = 0;
 selectedProducts.forEach(product => {
     total += product.price * product.quantity;
 });
-checkoutSummaryTotal.innerText = `Tạm tính: ${total.toLocaleString()}₫`;
+checkoutSummaryTotalEl.innerText = `Tạm tính: ${total.toLocaleString()}₫`;
 renderProducts();

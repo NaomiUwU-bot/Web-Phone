@@ -41,25 +41,27 @@
         </div>
         <div class ="payment-tab hidden" id="payment-tab">
             <h3>Phương thức thanh toán</h3>
-            <div class="payment-methods">
+            <div id="payment-methods">
                 <div class="payment-method">
-                    <input type="radio" id="payment-method-1" name="payment-method" value="method1" checked>
+                    <input type="radio" id="payment-method-1" name="payment-method" checked>
                     <label for="payment-method-1">Thanh toán khi nhận hàng</label>
                 </div>
                 <div class="payment-method">
-                    <input type="radio" id="payment-method-2" name="payment-method" value="method2">
-                    <label for="payment-method-2">Chuyển khoản ngân hàng</label>
+                    <input type="radio" id="payment-method-2" name="payment-method" value="qr">
+                    <label for="payment-method-2">Chuyển khoản ngân hàng qua mã QR</label>
                 </div>
-                <div class="payment-method">
-                    <input type="radio" id="payment-method-3" name="payment-method" value="method3">
-                    <label for="payment-method-3">Thanh toán trực tuyến</label>
-                </div>
+            </div>
+            <div id="qr-code-container" class="hidden">
+                <p>Vui lòng quét mã QR để thanh toán.</p>
+                <img src="qr.png" alt="QR Code" id="qr-code">
             </div>
         </div>
         <div class="checkout-summary">
                 <span id="checkout-summary__total">Tạm tính: </span>
-                <button id="checkout-summary__back-btn" class="hidden" onclick="step('back')">Quay lại</button>
-                <button id="checkout-summary__confirm-btn" onclick="step()">Tiếp tục</button>
+                <div id="checkout-summary__btn-wrap">
+                    <button id="checkout-summary__back-btn" class="hidden" >Quay lại</button>
+                    <button id="checkout-summary__confirm-btn" >Tiếp tục</button>
+                </div>
             </div>
 	</main>
 	<script src="checkout.js"></script>

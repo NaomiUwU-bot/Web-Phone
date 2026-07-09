@@ -1,0 +1,198 @@
+/* ================= RESET ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f4f4;
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+
+    width:90%;
+    max-width:1200px;
+
+    margin:auto;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+}
+
+/* ================= HEADER TOP ================= */
+
+.header__top{
+
+    background:white;
+
+    border-bottom:1px solid #ddd;
+}
+
+.header__top .container{
+
+    height:70px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:30px;
+}
+
+/* Logo */
+
+.header__logo{
+
+    font-size:28px;
+
+    font-weight:bold;
+}
+
+/* Search */
+
+.header__search{
+
+    flex:1;
+}
+
+.header__search input{
+
+    width:100%;
+
+    height:42px;
+
+    padding:0 15px;
+
+    border:1px solid #ccc;
+
+    border-radius:6px;
+
+    outline:none;
+}
+
+/* Right */
+
+.header__actions{
+
+    display:flex;
+
+    gap:25px;
+}
+
+.header__actions a{
+
+    text-decoration:none;
+
+    color:#333;
+
+    font-weight:600;
+}
+
+/* ================= HEADER BOTTOM ================= */
+
+.header__bottom{
+
+    background:#1976d2;
+}
+
+.header__bottom .container{
+
+    height:50px;
+
+    display:flex;
+
+    align-items:center;
+}
+
+/* Navbar */
+
+.navbar{
+
+    width:100%;
+}
+
+.navbar__list{
+
+    list-style:none;
+
+    display:flex;
+
+    gap:35px;
+}
+
+.navbar__item a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.navbar__item a:hover{
+
+    color:gold;
+}
+
+/* ================= MAIN ================= */
+
+.main{
+
+    padding-top:120px;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+
+    height:400px;
+
+    background:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:30px;
+}
+
+/* ================= CONTENT ================= */
+
+.content{
+
+    background:white;
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:40px;
+
+    line-height:2;
+}

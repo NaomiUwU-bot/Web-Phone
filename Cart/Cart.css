@@ -1,0 +1,217 @@
+
+:root {
+    --text-color: #1E293B;
+    --button-color: #1A56DB;
+    --pale-blue-background-color: #F8FAFF;
+    --accent-color: #0EA5E9;
+    --border-divider-color: #E2E8F0;
+}
+
+body{
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f4f4f9 ;
+}
+
+header{
+	background-color: #333;
+	color: white;
+	text-align: center;
+	padding: 1rem;
+}
+
+
+
+.cart{
+	position:relative;
+	flex-direction: column;
+	display: flex;
+	max-width: 600px;
+	margin: 20px auto;
+	gap: 20px;
+	padding: 0 20px;
+}
+
+.products-section{
+	width: 100%;
+}
+
+.cart-item{
+	display:flex;
+    background-color: var(--pale-blue-background-color);
+    border: 1px solid var(--border-divider-color);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+    font-family: Arial, sans-serif;
+    max-width: 600px; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+
+.cart-item__checkbox-wrap {
+	padding-top:12;
+}
+.cart-item__checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 50%; /* Bo tròn 100% */
+    cursor: pointer;
+    position: relative;
+    outline: none;
+}
+.cart-item__info {
+    display: flex;
+    gap: 12px;
+    padding-right: 15px;
+}
+
+.cart-item__checkbox:checked {
+    border-color: var(--accent-color);
+    background-color: var(--accent-color);
+}
+
+.cart-item__checkbox:checked::after {
+    content: "✓";
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cart-item__image-wrap {
+    flex-shrink: 0;
+}
+.cart-item__img{
+	width: 80px;
+	height: 80px;
+	object-fit: cover;
+}
+
+.cart-item__info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.cart-item__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+.cart-item__name {
+    font-size: 15px;
+    color: var(--text-color);
+    margin: 0;
+    font-weight: 500;
+    line-height: 1.4;
+    padding-right: 10px;
+}
+.cart-item__delete-btn {
+    background: none;
+    border: none;
+    color: var(--button-color);
+    cursor: pointer;
+    padding: 2px;
+}
+
+.cart-item__price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    margin-bottom: 8px;
+}
+.cart-item__prices {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+.cart-item__price-current {
+    color: var(--text-color);
+    font-size: 16px;
+    font-weight: bold;
+}
+.cart-item__price-old {
+    color: #999;
+    font-size: 13px;
+    text-decoration: line-through;
+}
+
+
+.cart-item__quantity {
+    display: flex;
+    align-items: center;
+    background-color: #f3f3f3;
+    border-radius: 4px;
+    padding: 2px;
+}
+.cart-item__qty-btn {
+    background: transparent;
+    border: none;
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #333;
+}
+.cart-item__qty-input {
+    width: 28px;
+    background: transparent;
+    border: none;
+    text-align: center;
+    font-size: 14px;
+    pointer-events: none; /* Khóa không cho gõ tay */
+}
+
+.cart-item__total-price {
+    width: 12%;
+    text-align: center;
+    color: #ee4d2d; 
+}
+
+.cart-summary{
+	position: sticky;
+	width: 100%;
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	left: 0;
+	bottom: 0; /* luôn nằm bên dưới khung hình*/
+	height: 60px;
+	z-index: 999;
+	background-color: var(--pale-blue-background-color);
+}
+
+.cart-summary__left{
+	float:left;
+	padding: 12px;
+}
+
+.cart-summary__right{
+	float: right;
+	padding : 12px;
+    width: 200px;
+}
+#cart-summary__checkout-btn{
+    float: right;
+    background-color: var(--button-color);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 40px;
+    width: 120px;
+}
+#cart-summary__checkout-btn:disabled{
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+}
+
+
+

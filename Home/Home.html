@@ -7,108 +7,28 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="../Components/Header.css">
+<link rel="stylesheet" href="../Components/Footer.css">
 </head>
 <body>
 
-  <header class="site-header-stub">
-    <div class="top-bar">
-      <div class="container">
-        <span>📞 Hotline: <strong>1900 6868</strong> (Miễn phí)</span>
-        <span>🚚 Giao hàng toàn quốc · Miễn phí từ 500K</span>
-        <span>🎁 Đổi trả trong 7 ngày</span>
-      </div>
-    </div>
-    <div class="container main-nav">
-      <div class="logo">
-        <div class="logo-mark">D</div>
-        DePhone
-      </div>
-      <div class="search-box">
-        <input type="text" placeholder="Tìm kiếm điện thoại, thương hiệu...">
-        <button aria-label="Tìm kiếm">🔍</button>
-      </div>
-      <ul class="nav-icons">
-        <li>👤<span>Tài khoản</span></li>
-        <li>♡<span>Yêu thích</span></li>
-        <li class="icon-badge">🛒<span class="count">2</span><span>Giỏ hàng</span></li>
-      </ul>
-    </div>
-    <div class="container category-strip">
-      <a href="#">Tất cả</a>
-      <a href="#">iPhone</a>
-      <a href="#">Samsung</a>
-      <a href="#">Xiaomi</a>
-      <a href="#">OPPO</a>
-      <a href="#">Realme</a>
-      <a href="#">Vivo</a>
-      <a href="#">Phụ kiện</a>
-    </div>
-  </header>
+<header id="header"></header>
 
-  <main>
+<main>
 
     <!-- HERO -->
     <section class="hero">
       <div class="container">
         <div class="hero-copy">
-          <div class="eyebrow">🔥 Ưu đãi khai trương — Giảm đến 21%</div>
           <h1>Điện thoại <span>chính hãng</span><br>giá tốt mỗi ngày</h1>
           <p>DePhone mang đến hàng ngàn mẫu smartphone từ Apple, Samsung, Xiaomi... với cam kết chính hãng 100%, bảo hành tận tâm và giao hàng siêu tốc trong 2 giờ.</p>
           <div class="hero-actions">
             <a href="#san-pham" class="btn btn-primary">Mua ngay hôm nay →</a>
-            <a href="#flash-sale" class="btn btn-ghost">Xem Flash Sale</a>
-          </div>
-          <div class="hero-stats">
-            <div><strong>120K+</strong><span>Khách hàng tin dùng</span></div>
-            <div><strong>500+</strong><span>Mẫu điện thoại</span></div>
-            <div><strong>4.8/5</strong><span>Đánh giá trung bình</span></div>
           </div>
         </div>
         <div class="hero-visual">
-          <div class="float-card top">✅ Chính hãng VN/A</div>
           <div class="phone-frame">
             <img src="https://images.unsplash.com/photo-1592286927505-1def25115558?w=600&q=80" alt="Điện thoại nổi bật">
-          </div>
-          <div class="float-card bottom"><span class="dot"></span> Đang giảm giá -21%</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- QUICK CATEGORIES -->
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Mua sắm theo thương hiệu</h2>
-            <p>Chọn nhanh thương hiệu điện thoại bạn yêu thích</p>
-          </div>
-        </div>
-        <div class="quick-cats">
-          <a class="quick-cat" href="#"><div class="emoji">🍎</div><span>Apple</span></a>
-          <a class="quick-cat" href="#"><div class="emoji">📱</div><span>Samsung</span></a>
-          <a class="quick-cat" href="#"><div class="emoji">⚡</div><span>Xiaomi</span></a>
-          <a class="quick-cat" href="#"><div class="emoji">🔷</div><span>OPPO</span></a>
-          <a class="quick-cat" href="#"><div class="emoji">🎯</div><span>Realme</span></a>
-          <a class="quick-cat" href="#"><div class="emoji">🎧</div><span>Phụ kiện</span></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- FLASH SALE -->
-    <section class="section" id="flash-sale" style="padding-top:0;">
-      <div class="container">
-        <div class="flash-sale">
-          <div class="flash-sale-left">
-            <span class="flash-badge">FLASH SALE</span>
-            <div>
-              <h3>Deal khủng mỗi ngày — số lượng có hạn</h3>
-              <p>Kết thúc sau:</p>
-            </div>
-          </div>
-          <div class="countdown" id="countdown">
-            <div><strong id="cd-h">05</strong><span>Giờ</span></div>
-            <div><strong id="cd-m">42</strong><span>Phút</span></div>
-            <div><strong id="cd-s">10</strong><span>Giây</span></div>
           </div>
         </div>
       </div>
@@ -247,62 +167,11 @@
       </div>
     </section>
 
-    <!-- TRUST BADGES -->
-    <section class="section trust-section">
-      <div class="container">
-        <div class="trust-grid">
-          <div class="trust-card">
-            <div class="trust-icon">✅</div>
-            <div><h4>Chính hãng 100%</h4><p>Cam kết sản phẩm nguyên seal, đầy đủ VAT & phụ kiện.</p></div>
-          </div>
-          <div class="trust-card">
-            <div class="trust-icon">🛡️</div>
-            <div><h4>Bảo hành 12 tháng</h4><p>1 đổi 1 trong 30 ngày đầu nếu có lỗi từ nhà sản xuất.</p></div>
-          </div>
-          <div class="trust-card">
-            <div class="trust-icon">🚚</div>
-            <div><h4>Giao hàng 2 giờ</h4><p>Miễn phí giao hàng nội thành cho đơn từ 500.000đ.</p></div>
-          </div>
-          <div class="trust-card">
-            <div class="trust-icon">💳</div>
-            <div><h4>Trả góp 0%</h4><p>Hỗ trợ trả góp qua thẻ tín dụng và các công ty tài chính.</p></div>
-          </div>
-        </div>
-      </div>
-    </section>
+</main>
 
-    <!-- TRADE-IN CTA -->
-    <section class="section" style="padding-top:0;">
-      <div class="container">
-        <div class="cta-banner">
-          <div>
-            <h3>Thu cũ đổi mới — trợ giá đến 3.000.000đ</h3>
-            <p>Mang máy cũ đến DePhone để được định giá miễn phí và lên đời điện thoại mới ngay hôm nay.</p>
-          </div>
-          <a href="#" class="btn btn-ghost">Định giá máy cũ →</a>
-        </div>
-      </div>
-    </section>
+<footer id="footer"></footer>
 
-    <!-- BRAND STRIP -->
-    <section class="container">
-      <div class="brand-strip">
-        <span>APPLE</span>
-        <span>SAMSUNG</span>
-        <span>XIAOMI</span>
-        <span>OPPO</span>
-        <span>REALME</span>
-        <span>VIVO</span>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer-stub">
-    © 2026 DePhone. Bản quyền thuộc về nhóm phát triển.
-  </footer>
-
-  <script src="home.js"></script>
+<script src="home.js"></script>
 
 </body>
 </html>

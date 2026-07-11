@@ -111,9 +111,14 @@ body {
 }
 
 .product-rating {
+    display: flex;
     padding: 8px 12px;
     font-size: 14px;
     font-weight: 600;
+}
+
+.product-rating i{
+    color:#FFD43B;
 }
 
 .sold {

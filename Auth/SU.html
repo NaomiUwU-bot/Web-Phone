@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký</title>
+    <link rel="stylesheet" href="SU.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../Components/Header.css">
+    <link rel="stylesheet" href="../Components/Footer.css">
+</head>
+<body>
+
+    <header id="header"></header>
+
+    <div class="container">
+       <h2>Đăng ký</h2>
+       <form action="#" method="post">
+        <div class="nhập">
+            <input type="text" name="fullname" placeholder="Họ và Tên" autocomplete="name" required>
+             <small class="error"></small>
+        </div>
+        <div class="nhập">
+            <input type="text" name="username" placeholder="Tên đăng nhập" autocomplete="username" required>
+             <small class="error"></small>
+        </div>
+        <div class="nhập">
+            <input type="email" name="email" placeholder="Email" autocomplete="email" required>
+             <small class="error"></small>
+        </div>
+        <div class="nhập">
+            <input type="tel" name="phone" placeholder="Số điện thoại" autocomplete="tel" required>
+             <small class="error"></small>
+        </div>
+        <div class="nhập password-box">
+            <input id="password" type="password" name="password" placeholder="Mật khẩu" autocomplete="new-password" required>
+            <i class="fa-solid fa-eye-slash toggle-password" id="togglePassword"></i>
+            <small class="error"></small>
+        </div>
+        <div class="nhập password-box">
+            <input id="confirm_password" type="password" name="confirm_password" placeholder="Nhập lại mật khẩu" autocomplete="new-password" required>
+            <i class="fa-solid fa-eye-slash toggle-password" id="toggleConfirmPassword"></i>
+            <small class="error"></small>
+        </div>
+        <div class="check">
+            <label><input type="checkbox" name="agree" required>Tôi đồng ý với điều kiện</label>
+        </div>
+        <button type="submit" class="btn" name="btn">Đăng ký</button>
+        <div class="link">
+            <p>Đã có tài khoản?  <a href="LI.html">Đăng nhập</a></p>
+        </div>
+       </form>
+    </div>
+
+    <footer id="footer"></footer>
+
+    <script src="SU.js"></script>
+</body>
+</html>

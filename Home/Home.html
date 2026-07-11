@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DePhone — Trang chủ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="../Components/Header.css">
+<link rel="stylesheet" href="../Components/Footer.css">
+</head>
+<body>
+
+<header id="header"></header>
+
+<main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-copy">
+          <h1>Điện thoại <span>chính hãng</span><br>giá tốt mỗi ngày</h1>
+          <p>DePhone mang đến hàng ngàn mẫu smartphone từ Apple, Samsung, Xiaomi... với cam kết chính hãng 100%, bảo hành tận tâm và giao hàng siêu tốc trong 2 giờ.</p>
+          <div class="hero-actions">
+            <a href="#san-pham" class="btn btn-primary">Mua ngay hôm nay →</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="phone-frame">
+            <img src="https://images.unsplash.com/photo-1592286927505-1def25115558?w=600&q=80" alt="Điện thoại nổi bật">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS -->
+    <section class="section" id="san-pham">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Sản phẩm nổi bật</h2>
+            <p>Được khách hàng tin dùng và đánh giá cao nhất</p>
+          </div>
+          <div class="filter-tabs" id="filterTabs">
+            <button class="active" data-filter="all">Tất cả</button>
+            <button data-filter="apple">Apple</button>
+            <button data-filter="samsung">Samsung</button>
+            <button data-filter="xiaomi">Xiaomi</button>
+            <button data-filter="oppo">OPPO</button>
+          </div>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+          <!-- Card 1 -->
+          <div class="product-card" data-brand="apple">
+            <div class="product-thumb">
+              <span class="tag new">Mới</span>
+              <button class="wish-btn">♡</button>
+              <img src="https://cdn11.dienmaycholon.vn/filewebdmclnew/DMCL21/Picture//Apro/Apro_product_33367/iphone-15-256gb-main--131.png" alt="iPhone 15 Pro Max">
+            </div>
+            <div class="product-info">
+              <span class="brand-name">Apple</span>
+              <div class="product-name">iPhone 15 Pro Max 256GB</div>
+              <div class="rating"><span class="stars">★★★★★</span> (2.841)</div>
+              <div class="price-row"><span class="price">29.990.000đ</span></div>
+              <button class="add-cart-btn">🛒 Thêm giỏ hàng</button>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="product-card" data-brand="samsung">
+            <div class="product-thumb">
+              <span class="tag sale">Sale</span>
+              <span class="discount-pill">-21%</span>
+              <button class="wish-btn">♡</button>
+              <img src="https://longbinh.com.vn/images/thumbnails/480/369/detailed/109/%C4%90i%E1%BB%87n_tho%E1%BA%A1i_Samsung_Galaxy_S24_Ultra_5G_Ch%C3%ADnh_h%C3%A3ng_-_longbinh.com.vn90.jpg" alt="Samsung Galaxy S24 Ultra">
+            </div>
+            <div class="product-info">
+              <span class="brand-name">Samsung</span>
+              <div class="product-name">Samsung Galaxy S24 Ultra</div>
+              <div class="rating"><span class="stars">★★★★☆</span> (1.820)</div>
+              <div class="price-row">
+                <span class="price">26.990.000đ</span>
+                <span class="old-price">33.990.000đ</span>
+              </div>
+              <button class="add-cart-btn">🛒 Thêm giỏ hàng</button>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="product-card" data-brand="xiaomi">
+            <div class="product-thumb">
+              <span class="tag new">Mới</span>
+              <button class="wish-btn">♡</button>
+              <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcS9tpSnaYZxq_VTLO369-AknuEYRpcCjvGeJbjoKoH13fRLInPN0MdUSZaCXnBqKIDLzraNfuKIkXKlA41JgbxYwEa16JcU2XJpZj96Hp0m7Sony8KlSCUan_vq6tDw&usqp=CAc" alt="Xiaomi 14 Pro">
+            </div>
+            <div class="product-info">
+              <span class="brand-name">Xiaomi</span>
+              <div class="product-name">Xiaomi 14 Pro 512GB</div>
+              <div class="rating"><span class="stars">★★★★☆</span> (934)</div>
+              <div class="price-row"><span class="price">18.990.000đ</span></div>
+              <button class="add-cart-btn">🛒 Thêm giỏ hàng</button>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="product-card" data-brand="oppo">
+            <div class="product-thumb">
+              <span class="tag sale">Sale</span>
+              <span class="discount-pill">-15%</span>
+              <button class="wish-btn">♡</button>
+              <img src="https://cellphones.com.vn/sforum/wp-content/uploads/2024/01/OPPO-Find-X7-Ultra-ra-mat-1.jpeg" alt="OPPO Find X7">
+            </div>
+            <div class="product-info">
+              <span class="brand-name">OPPO</span>
+              <div class="product-name">OPPO Find X7 Ultra</div>
+              <div class="rating"><span class="stars">★★★★★</span> (612)</div>
+              <div class="price-row">
+                <span class="price">21.990.000đ</span>
+                <span class="old-price">25.990.000đ</span>
+              </div>
+              <button class="add-cart-btn">🛒 Thêm giỏ hàng</button>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="product-card" data-brand="apple">
+            <div class="product-thumb">
+              <span class="tag sale">Sale</span>
+              <span class="discount-pill">-17%</span>
+              <button class="wish-btn">♡</button>
+              <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?w=400&q=80" alt="iPhone 14">
+            </div>
+            <div class="product-info">
+              <span class="brand-name">Apple</span>
+              <div class="product-name">iPhone 14 128GB</div>
+              <div class="rating"><span class="stars">★★★★☆</span> (5.632)</div>
+              <div class="price-row">
+                <span class="price">16.990.000đ</span>
+                <span class="old-price">20.490.000đ</span>
+              </div>
+              <button class="add-cart-btn">🛒 Thêm giỏ hàng</button>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="product-card" data-brand="samsung">
+            <div class="product-thumb">
+              <span class="tag new">Mới</span>
+              <button class="wish-btn">♡</button>
+              <img src="https://cdn1.viettelstore.vn/Images/Product/ProductImage/400185186.jpeg" alt="Samsung Z Flip6">
+            </div>
+            <div class="product-info">
+              <span class="brand-name">Samsung</span>
+              <div class="product-name">Samsung Galaxy Z Flip6</div>
+              <div class="rating"><span class="stars">★★★★☆</span> (1.204)</div>
+              <div class="price-row"><span class="price">24.990.000đ</span></div>
+              <button class="add-cart-btn">🛒 Thêm giỏ hàng</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="load-more-wrap">
+          <button class="btn-outline">Xem thêm sản phẩm →</button>
+        </div>
+      </div>
+    </section>
+
+</main>
+
+<footer id="footer"></footer>
+
+<script src="home.js"></script>
+
+</body>
+</html>

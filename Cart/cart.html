@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cart</title>
+	<link rel="stylesheet" href="cart.css">
+	<link rel="stylesheet" href="../Components/Header.css">
+	<link rel="stylesheet" href="../Components/Footer.css">
+</head>
+<body>
+	<header id="header"></header>
+
+	<main class="cart">
+		<section class="products-section">
+			<div id="product-list" class="products-section__list"></div>
+		</section>
+		<section id="cart-summary" class="cart-summary">
+			<div class="cart-summary__left">
+				<label class="cart-summary__label">
+					<span id="cart-summary__total">Tạm tính: 0đ</span>
+				</label>
+			</div>
+			<div class="cart-summary__right">
+				<button id="cart-summary__checkout-btn" disabled>Mua hàng</button>
+			</div>
+		</section>
+	</main>
+
+	<footer id="footer"></footer>
+
+	<script src="cart.js"></script>
+</body>
+</html>

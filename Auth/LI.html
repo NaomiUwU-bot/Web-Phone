@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <link rel="stylesheet" href="LI.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../Components/Header.css">
+    <link rel="stylesheet" href="../Components/Footer.css">
+</head>
+<body>
+    
+    <header id="header"></header>
+
+    <div class="container">
+        <h2>Đăng nhập</h2><br>
+        <form action="#" method="post">
+        <div class="nhập">
+            <input type="text" name="username" placeholder="Tên đăng nhập" autocomplete="username" required>
+            <small class="error"></small>
+        </div> 
+        <div class="nhập password-box">
+            <input id="password" type="password" name="password" placeholder="Mật khẩu" autocomplete="current-password" required>
+            <i class="fa-solid fa-eye-slash toggle-password" id="togglePassword"></i>
+            <small class="error"></small>
+        </div>
+        <div class="nhớ-quên">
+            <label><input type="checkbox" name="remember">Ghi nhớ đăng nhập</label>
+        </div>
+        <button type="submit" class="btn">Đăng nhập</button>
+        <div class="link">
+            <p>Tôi không có tài khoản?  <a href="SU.html">Đăng ký ngay</a></p>
+        </div>
+
+        </form>
+    </div>
+
+    <footer id="footer"></footer>
+    
+    <script src="LI.js"></script>
+</body>
+</html>

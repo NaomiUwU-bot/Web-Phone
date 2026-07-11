@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cart</title>
+	<link rel="stylesheet" href="checkout.css">
+    <link rel="stylesheet" href="../Components/Header.css">
+    <link rel="stylesheet" href="../Components/Footer.css">
+</head>
+<body>
+	<header id="header"></header>
+
+	<main class="checkout">
+        <div class="info-tab active" id="info-tab">
+            <div class="checkout-products">
+                <h3>Danh sách sản phẩm</h3>
+                <div id ="checkout-products__list"></div>
+            </div>
+            <div class="customer-info">
+                <h3>Thông tin khách hàng</h3>
+                <form id="customer-info__form">
+                    <div id="customer-info__name">
+                        <span>Họ và tên</span>
+                        <input type="text" id="customer-name" placeholder="Họ và tên" required>
+                    </div>
+                    <div id="customer-info__phone">
+                        <span>Số điện thoại</span>
+                        <input type="tel" id="customer-phone" placeholder="Số điện thoại" required>
+                    </div>
+                    <div id="customer-info__email">
+                        <span>Email</span>
+                        <input type="email" id="customer-email" placeholder="Email" required>
+                    </div>
+                    <div id="customer-info__address" >
+                        <span>Địa chỉ</span>
+                        <textarea id="customer-address" placeholder="Địa chỉ" required></textarea>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+        <div class ="payment-tab hidden" id="payment-tab">
+            <h3>Phương thức thanh toán</h3>
+            <div id="payment-methods">
+                <div class="payment-method">
+                    <input type="radio" id="payment-method-1" name="payment-method" checked>
+                    <label for="payment-method-1">Thanh toán khi nhận hàng</label>
+                </div>
+                <div class="payment-method">
+                    <input type="radio" id="payment-method-2" name="payment-method" value="qr">
+                    <label for="payment-method-2">Chuyển khoản ngân hàng qua mã QR</label>
+                </div>
+            </div>
+            <div id="qr-code-container" class="hidden">
+                <p>Vui lòng quét mã QR để thanh toán.</p>
+                <img src="qr.png" alt="QR Code" id="qr-code">
+            </div>
+        </div>
+        <div class="checkout-summary">
+                <span id="checkout-summary__total">Tạm tính: </span>
+                <div id="checkout-summary__btn-wrap">
+                    <button id="checkout-summary__back-btn" class="hidden" >Quay lại</button>
+                    <button id="checkout-summary__confirm-btn" >Tiếp tục</button>
+                </div>
+            </div>
+	</main>
+
+    <footer id="footer"></footer>
+
+	<script src="checkout.js"></script>
+</body>
+</html>

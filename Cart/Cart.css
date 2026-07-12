@@ -105,7 +105,7 @@ body{
     line-height: 1.4;
     padding-right: 10px;
 }
-.cart-item__delete-btn {
+.cart-item__delete-btn, #cart-item__delete-btn{
     background: none;
     border: none;
     color: var(--button-color);
@@ -190,6 +190,21 @@ body{
 	padding : 12px;
     width: 200px;
 }
+
+#cart-actions label {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+    cursor: pointer; 
+}
+
+#cart-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
 #cart-summary__checkout-btn{
     float: right;
     background-color: var(--button-color);
@@ -204,6 +219,3 @@ body{
     color: #666666;
     cursor: not-allowed;
 }
-
-
-

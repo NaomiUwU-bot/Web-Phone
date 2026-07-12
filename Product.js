@@ -33,7 +33,7 @@ function renderProducts() {
                 </div>
 
                 <div class="product-action">
-                    <button class="buy-btn">Mua ngay</button>
+                    <button class="buy-btn" data-id="${product.id}">Mua ngay</button>
                     
                     <a href="Product-detail.html?id=${product.id}" class="detail-link">
                         Xem chi tiết
@@ -48,3 +48,15 @@ function renderProducts() {
 }
 
 renderProducts();
+
+fetch("../Components/Header.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("header").innerHTML = data;
+    });
+
+fetch("../Components/Footer.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("footer").innerHTML = data;
+    });

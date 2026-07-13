@@ -56,11 +56,21 @@ body {
 }
 
 .category-menu a {
+    display: block;
     color: #475569;
     text-decoration: none;
     font-size: 15px;
+    transition: 0.2s;
 }
-
+.category-menu a:hover {
+    background-color: #e0f2fe;
+    color: rgb(157, 208, 239);
+}
+.category-menu a.active {
+    background-color: lightskyblue;
+    color: darkblue;
+    font-weight: bold;
+}
 .product-section {
     width: 100%;
 }
@@ -114,6 +124,7 @@ body {
     display: flex;
     padding: 8px 12px;
     font-size: 14px;
+    gap: 10px;
     font-weight: 600;
 }
 

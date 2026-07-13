@@ -87,6 +87,13 @@ function filterProducts() {
         link.addEventListener("click", function (event) {
 
             event.preventDefault();
+            // Bỏ active của tất cả menu
+            brandLinks.forEach(function (item) {
+                item.classList.remove("active");
+            });
+
+            // Thêm active cho menu vừa chọn
+            this.classList.add("active");
 
             const brand = this.dataset.brand;
 

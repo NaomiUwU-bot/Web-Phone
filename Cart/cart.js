@@ -11,10 +11,14 @@ const productListEl = document.getElementById('product-list');
 const cartTotalEl = document.getElementById('cart-summary__total');
 const checkoutBtnEl = document.getElementById('cart-summary__checkout-btn');
 const cartSummaryEl = document.getElementById('cart-summary');
+const productTotalEl = document.getElementsByClassName('cart-item__total');
 
 const selectAllCheckboxEl = document.getElementById('select-all-checkbox');
 const deleteAllBtnEl = document.getElementById('cart-item__delete-btn');
 const cartActionsEl = document.getElementById('cart-actions');
+const btnIncrease = document.getElementsByClassName('btn-increase');
+const btnDecrease = document.getElementsByClassName('btn-deacrease');
+
 
 //Hiển thị các sản phẩm trong giỏ hàng và định nghĩa các hàm (tăng, giảm, xóa, check)
 function renderProducts(){
@@ -28,45 +32,64 @@ function renderProducts(){
 	}
 	else{
 		cartSummaryEl.style.display = 'flex';
-		products.forEach((product,index) =>{
-			const productDiv = document.createElement('div');
-			productDiv.innerHTML = `
-				<div class="cart-item">
-			        <div class="cart-item__checkbox-wrap">
-			            <input type="checkbox" class="cart-item__checkbox" ${product.checked ? 'checked' : ''}>
-			        </div>
-			        <div class="cart-item__img-wrap">
-			            <img src=${product.image} alt=${product.name} class="cart-item__img">
-			        </div>
+		// products.forEach((product,index) =>{
+		// 	const productDiv = document.createElement('div');
+		// 	productDiv.innerHTML = `
+		// 		<div class="cart-item">
+		// 	        <div class="cart-item__checkbox-wrap">
+		// 	            <input type="checkbox" class="cart-item__checkbox" ${product.checked ? 'checked' : ''}>
+		// 	        </div>
+		// 	        <div class="cart-item__img-wrap">
+		// 	            <img src=${product.image} alt=${product.name} class="cart-item__img">
+		// 	        </div>
 
-			        <div class="cart-item__info">
-			            <div class="cart-item__header">
-			                <h3 class="cart-item__name">${product.name}</h3>
-			                <button class="cart-item__delete-btn" aria-label="Xóa">
-			                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
-			                </button>
-			            </div>
+		// 	        <div class="cart-item__info">
+		// 	            <div class="cart-item__header">
+		// 	                <h3 class="cart-item__name">${product.name}</h3>
+		// 	                <button class="cart-item__delete-btn" aria-label="Xóa">
+		// 	                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+		// 	                </button>
+		// 	            </div>
 
-			            <div class="cart-item__price-row">
-			                <div class="cart-item__prices">
-			                    <span class="cart-item__price-current">${product.price}₫</span>
-			                    <span class="cart-item__price-old">${product.price}₫</span>
-			                </div>
+		// 	            <div class="cart-item__price-row">
+		// 	                <div class="cart-item__prices">
+		// 	                    <span class="cart-item__price-current">${product.price}₫</span>
+		// 	                    <span class="cart-item__price-old">${product.price}₫</span>
+		// 	                </div>
 			                
-			                <div class="cart-item__quantity">
-			                    <button class="cart-item__qty-btn btn-decrease">-</button>
-			                    <input type="text" class="cart-item__qty-input" value="${product.quantity}" readonly>
-			                    <button class="cart-item__qty-btn btn-increase">+</button>
-			                </div>
-			            </div>
-				       </div>
-				</div>
+		// 	                <div class="cart-item__quantity">
+		// 	                    <button class="cart-item__qty-btn btn-decrease">-</button>
+		// 	                    <input type="text" class="cart-item__qty-input" value="${product.quantity}" readonly>
+		// 	                    <button class="cart-item__qty-btn btn-increase">+</button>
+		// 	                </div>
+		// 	            </div>
+		// 		       </div>
+		// 		</div>
+		// 	`;
+		products.forEach((product, index)=>{
+			const productDiv = document.createElement('div');
+			productDiv.classList.add('cart-item');
+			productDiv.innerHTML =`
+				<input type="checkbox" name="select-item" class="cart-item__checkbox" ${product.checked ? 'checked' : ''}>
+				<img src="${product.image}" class="cart-item__img">
+				<div class="cart-item__name">${product.name}</div>
+				<div class="cart-item__prices">${product.price}đ</div>
+				<div class="cart-item__quantity">
+					<button class="cart-item__qty-btn btn-decrease">-</button>
+					<input type="number" value="${product.quantity}" min="1" class="cart-item__qty-input" readonly>
+					<button class="cart-item__qty-btn btn-increase">+</button>
+			    </div>
+			    <div class="cart-item__total">${product.price * product.quantity}đ</div>
+			    <button class="cart-item__delete-btn">Xóa</button>
 			`;
+
+			
 			const checkbox = productDiv.querySelector('.cart-item__checkbox');
 			const qtyInput = productDiv.querySelector('.cart-item__qty-input');
 			const btnIncrease = productDiv.querySelector('.btn-increase');
 			const btnDecrease = productDiv.querySelector('.btn-decrease');
 			const btnDelete = productDiv.querySelector('.cart-item__delete-btn');
+			const cartItemTotal = productDiv.querySelector('.cart-item__total');
 
 			//Chọn sản phẩm để đi đến thanh toán
 			checkbox.addEventListener('change', function(event){
@@ -79,6 +102,7 @@ function renderProducts(){
 			btnIncrease.addEventListener('click', function(){
 				product.quantity+=1;
 				qtyInput.value = product.quantity;
+				cartItemTotal.innerText = product.quantity * product.price;
 				saveCart();
 				updateCartUI();
 			});
@@ -88,6 +112,8 @@ function renderProducts(){
 				if (product.quantity>1){
 					product.quantity -= 1;
 					qtyInput.value = product.quantity;
+					cartItemTotal.innerText = product.quantity * product.price;
+
 					saveCart();
 					updateCartUI();
 				}
@@ -129,6 +155,10 @@ selectAllCheckboxEl.addEventListener('change', function(event) {
     updateCartUI();
 });
 
+function toVND(price){
+	
+}
+
 //Chuyển đến trang thanh toán
 function checkout(){
 	const selectedProducts = products.filter(product => product.checked);
@@ -144,6 +174,7 @@ function updateCartUI() {
 
     let totalAmount = 0;
     products.forEach(product => {
+
         if (product.checked) {
             totalAmount += product.price * product.quantity;
         }
@@ -157,6 +188,7 @@ function updateCartUI() {
         cartTotalEl.innerText = `Tạm tính: ${totalAmount}đ`;
     }
 }
+
 
 renderProducts()
 updateCartUI()

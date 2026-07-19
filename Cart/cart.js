@@ -11,10 +11,9 @@ const productListEl = document.getElementById('product-list');
 const cartTotalEl = document.getElementById('cart-summary__total');
 const checkoutBtnEl = document.getElementById('cart-summary__checkout-btn');
 const cartSummaryEl = document.getElementById('cart-summary');
-const productTotalEl = document.getElementsByClassName('cart-item__total');
 
 const selectAllCheckboxEl = document.getElementById('select-all-checkbox');
-const deleteAllBtnEl = document.getElementById('cart-item__delete-btn');
+const deleteAllBtnEl = document.getElementById('delete-all-btn');
 const cartActionsEl = document.getElementById('cart-actions');
 const btnIncrease = document.getElementsByClassName('btn-increase');
 const btnDecrease = document.getElementsByClassName('btn-deacrease');
@@ -73,13 +72,12 @@ function renderProducts(){
 				<input type="checkbox" name="select-item" class="cart-item__checkbox" ${product.checked ? 'checked' : ''}>
 				<img src="${product.image}" class="cart-item__img">
 				<div class="cart-item__name">${product.name}</div>
-				<div class="cart-item__prices">${product.price}đ</div>
+				<div class="cart-item__price">${product.price}đ</div>
 				<div class="cart-item__quantity">
 					<button class="cart-item__qty-btn btn-decrease">-</button>
 					<input type="number" value="${product.quantity}" min="1" class="cart-item__qty-input" readonly>
 					<button class="cart-item__qty-btn btn-increase">+</button>
 			    </div>
-			    <div class="cart-item__total">${product.price * product.quantity}đ</div>
 			    <button class="cart-item__delete-btn">Xóa</button>
 			`;
 
@@ -89,7 +87,6 @@ function renderProducts(){
 			const btnIncrease = productDiv.querySelector('.btn-increase');
 			const btnDecrease = productDiv.querySelector('.btn-decrease');
 			const btnDelete = productDiv.querySelector('.cart-item__delete-btn');
-			const cartItemTotal = productDiv.querySelector('.cart-item__total');
 
 			//Chọn sản phẩm để đi đến thanh toán
 			checkbox.addEventListener('change', function(event){
@@ -102,7 +99,6 @@ function renderProducts(){
 			btnIncrease.addEventListener('click', function(){
 				product.quantity+=1;
 				qtyInput.value = product.quantity;
-				cartItemTotal.innerText = product.quantity * product.price;
 				saveCart();
 				updateCartUI();
 			});
@@ -112,7 +108,6 @@ function renderProducts(){
 				if (product.quantity>1){
 					product.quantity -= 1;
 					qtyInput.value = product.quantity;
-					cartItemTotal.innerText = product.quantity * product.price;
 
 					saveCart();
 					updateCartUI();

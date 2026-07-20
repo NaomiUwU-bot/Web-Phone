@@ -7,7 +7,6 @@ const backBtnEl = document.getElementById('checkout-summary__back-btn');
 const confirmBtnEl = document.getElementById('checkout-summary__confirm-btn');
 
 
-
 localStorage.setItem('state','info');
 
 function renderProducts(){
@@ -30,7 +29,7 @@ function renderProducts(){
                         </div>
                         
                         <div class="cart-item__quantity">
-                            <span>${product.quantity}</span>
+                            <span>Số lượng: ${product.quantity}</span>
                         </div>
                     </div>
                     </div>

@@ -207,5 +207,4 @@ body{
     .cart-item__price{ grid-column:4; grid-row:1;}
     .cart-item__quantity{ grid-column:5; }
     .cart-item__delete-btn { grid-column:6; grid-row:1;}
-
 }

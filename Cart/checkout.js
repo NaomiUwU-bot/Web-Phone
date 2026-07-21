@@ -47,15 +47,20 @@ function renderProducts(){
 
         const quantityDiv = document.createElement('div');
         quantityDiv.className = 'cart-item__quantity';
-        quantityDiv.textContent = product.quantity;
+        quantityDiv.textContent = `số lượng: ${product.quantity}`;
+
+        const priceDiv = document.createElement('div');
+        priceDiv.className = 'cart-item__price';
+        priceDiv.textContent = `${product.price.toLocaleString()}đ`;
 
         const totalPriceDiv = document.createElement('div');
-        totalPriceDiv.className = 'cart-item__price';
+        totalPriceDiv.className = 'cart-item__total-price';
         totalPriceDiv.textContent = `${(product.quantity * product.price).toLocaleString()}đ`;
 
         productDiv.appendChild(img);
         productDiv.appendChild(nameDiv);
         productDiv.appendChild(quantityDiv);
+        productDiv.appendChild(priceDiv);
         productDiv.appendChild(totalPriceDiv);
         
 

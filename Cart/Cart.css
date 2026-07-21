@@ -92,12 +92,21 @@ body{
     padding-right: 10px;
 }
 
+.cart-item__total-price,
 .cart-item__price {
-    grid-column: 3;
-    grid-row: 2;
     gap: 8px;
     color: #d70018;
     font-weight: 700;
+}
+
+.cart-item__total-price{
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.cart-item__price{
+    grid-column: 2;
+    grid-row:2;
 }
 
 .cart-item__delete-btn, #delete-all-btn{

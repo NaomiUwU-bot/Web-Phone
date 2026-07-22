@@ -7,35 +7,59 @@ const backBtnEl = document.getElementById('checkout-summary__back-btn');
 const confirmBtnEl = document.getElementById('checkout-summary__confirm-btn');
 
 
-
 localStorage.setItem('state','info');
 
 function renderProducts(){
     selectedProducts.forEach((product,index) =>{
         const productDiv = document.createElement('div');
-        productDiv.innerHTML = `
-            <div class="cart-item">
-                <div class="cart-item__img-wrap">
-                    <img src=${product.img_src} alt=${product.name} class="cart-item__img">
-                </div>
+        productDiv.className ="cart-item";
+        // productDiv.innerHTML = `
+        //     <div class="cart-item">
+        //         <div class="cart-item__img-wrap">
+        //             <img src=${product.img_src} alt=${product.name} class="cart-item__img">
+        //         </div>
 
-                <div class="cart-item__info">
-                    <div class="cart-item__header">
-                        <h3 class="cart-item__name">${product.name}</h3>
-                    </div>
-                    <div class="cart-item__price-row">
-                        <div class="cart-item__prices">
-                            <span class="cart-item__price-current">${product.price}₫</span>
-                            <span class="cart-item__price-old">${product.price}₫</span>
-                        </div>
+        //         <div class="cart-item__info">
+        //             <div class="cart-item__header">
+        //                 <h3 class="cart-item__name">${product.name}</h3>
+        //             </div>
+        //             <div class="cart-item__price-row">
+        //                 <div class="cart-item__prices">
+        //                     <span class="cart-item__price-current">${product.price}₫</span>
+        //                     <span class="cart-item__price-old">${product.price}₫</span>
+        //                 </div>
                         
-                        <div class="cart-item__quantity">
-                            <span>${product.quantity}</span>
-                        </div>
-                    </div>
-                    </div>
-            </div>
-        `;
+        //                 <div class="cart-item__quantity">
+        //                     <span>Số lượng: ${product.quantity}</span>
+        //                 </div>
+        //             </div>
+        //             </div>
+        //     </div>
+        // `;
+
+        const img = document.createElement('img');
+        img.src = product.image;
+        img.className = 'cart-item__img';
+
+        const nameDiv = document.createElement('div');
+        nameDiv.className = 'cart-item__name';
+        nameDiv.textContent = product.name;
+
+        const quantityDiv = document.createElement('div');
+        quantityDiv.className = 'cart-item__quantity';
+        quantityDiv.textContent = product.quantity;
+
+        const totalPriceDiv = document.createElement('div');
+        totalPriceDiv.className = 'cart-item__price';
+        totalPriceDiv.textContent = `${(product.quantity * product.price).toLocaleString()}đ`;
+
+        productDiv.appendChild(img);
+        productDiv.appendChild(nameDiv);
+        productDiv.appendChild(quantityDiv);
+        productDiv.appendChild(totalPriceDiv);
+        
+
+
         checkoutProductsListEl.appendChild(productDiv);		
     });
 }
@@ -83,6 +107,8 @@ selectedProducts.forEach(product => {
     total += product.price * product.quantity;
 });
 checkoutSummaryTotalEl.innerText = `Tạm tính: ${total.toLocaleString()}₫`;
+
+
 renderProducts();
 
 // Them Header va Footer

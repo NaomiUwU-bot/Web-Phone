@@ -1,3 +1,4 @@
+//Lấy danh sách các mặt hàng nằm trong giỏ (nếu có)
 const products = JSON.parse(localStorage.getItem('inCartProducts')) || [];
 
 // Lưu lại trạng thái của giỏ hàng trong local storage mỗi khi thực hiện thay đổi (tăng, giảm, xóa) 
@@ -6,7 +7,7 @@ function saveCart(){
 }
 
 let cart =[];
-// lấy thể hiện từ html cho dễ dùng
+// lấy các element từ html về cho dễ dùng
 const productListEl = document.getElementById('product-list');
 const cartTotalEl = document.getElementById('cart-summary__total');
 const checkoutBtnEl = document.getElementById('cart-summary__checkout-btn');
@@ -165,6 +166,7 @@ checkoutBtnEl.addEventListener('click', checkout);
 
 //Cập nhật lại trang sau khi thực hiện thay đổi
 function updateCartUI() {
+	//logic của nút chọn tất cả
 	selectAllCheckboxEl.checked = products.every(p => p.checked);
  
     let totalAmount = 0;

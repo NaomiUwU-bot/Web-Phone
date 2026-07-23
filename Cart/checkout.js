@@ -47,11 +47,11 @@ function renderProducts(){
 
         const quantityDiv = document.createElement('div');
         quantityDiv.className = 'cart-item__quantity';
-        quantityDiv.textContent = product.quantity;
+        quantityDiv.textContent = `Số lượng: ${product.quantity}`;
 
         const totalPriceDiv = document.createElement('div');
-        totalPriceDiv.className = 'cart-item__price';
-        totalPriceDiv.textContent = `${(product.quantity * product.price).toLocaleString()}đ`;
+        totalPriceDiv.className = 'cart-item__total-price';
+        totalPriceDiv.textContent = `Tổng: ${(product.quantity * product.price).toLocaleString()}đ`;
 
         productDiv.appendChild(img);
         productDiv.appendChild(nameDiv);

@@ -91,10 +91,6 @@ body{
     position: relative;
 }
 
-.backround-trái{
-    
-}
-
 .backround-trái::before{
     content: "";
     position: absolute;

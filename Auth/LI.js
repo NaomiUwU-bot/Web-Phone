@@ -143,3 +143,15 @@ function logout(){
 
     window.location.href = "LI.html";
 }
+
+fetch("../Components/Header.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("header").innerHTML = data;
+    });
+
+fetch("../Components/Footer.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("footer").innerHTML = data;
+    });

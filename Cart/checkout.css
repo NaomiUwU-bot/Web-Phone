@@ -11,22 +11,25 @@
 }
 
 body{
-	font-family: Arial, sans-serif;
-	margin: 0;
-	padding: 0;
-	background-color: #f4f4f9 ;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9 ;
 }
 
 .checkout{
-	position:relative;
-	flex-direction: column;
-	display: flex;
-	margin: 20px auto;
-	gap: 20px;
-	padding: 0 20px;
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    gap: 20px;
+    padding: 0 15px;
     max-width: 1200px;
 }
 
+.checkout-products{
+    width: 100%;
+}
 .cart-item{
     display:grid;
     grid-template-columns: 80px 1.2fr 1fr;
@@ -35,10 +38,9 @@ body{
     background-color: var(--pale-blue-background-color);
     border: 1px solid var(--border-divider-color);
     border-radius: 12px;
-    align-items: center;
+    align-items: start;
     padding: 16px;
     margin-bottom: 16px;
-    align-items: start;
     font-family: Arial, sans-serif;
     box-shadow: 0 2px 8px rgba(0,0,0,0.02);
 }
@@ -65,78 +67,87 @@ body{
     grid-column: 3;
     grid-row:1;
     display: flex;
-    align-items: center;
-    justify-self: center;
+    justify-self: end;
+    width: fit-content;
     border-radius: 4px;
     padding: 0;
 }
 
-.cart-item__price,
 .cart-item__total-price {
+    grid-column: 3;
+    grid-row: 2;
     gap: 8px;
     color: #d70018;
     font-weight: 700;
-    align-items: center;
+    justify-self: end;
 }
 
-.cart-item__total-price{
+#customer-info__form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#customer-info__name,
+#customer-info__phone,
+#customer-info__email{
+    display: flex;
+    flex-direction: column;
+    gap: 4px; 
+}
+
+#customer-info__form span {
+    font-weight: 500;
+    color: var(--text-color); 
+}
+
+#customer-info__form input,
+#customer-info__form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;     
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+
+#customer-info__address {
+    display: flex;
+    flex-direction: column;
+    gap: 4px; 
+}
+
+#customer-info__address textarea{
+    resize: none;
+}
+
+
+
+.checkout-summary{
+    position: sticky;
+    width: 100%;
+    align-self: center;
+    align-items: center;   
+    display: flex;
+    justify-content: space-between;
+    left: 0;
+    bottom: 0; /* luôn nằm bên dưới khung hình*/
+    height: 60px;
+    z-index: 999; /* luôn nằm trên tất cả các element khác */
+    background-color: var(--pale-blue-background-color);
+    border: 1px solid var(--border-divider-color);
+    padding: 0px 15px;
+}
+
+#checkout-summary__total{
     grid-column: 3;
     grid-row: 2;
-    justify-self: center;
-}
-
-.cart-item__price{
-    grid-column: 2;
-    grid-row: 2;
-}
-
-.customer-info{
-    display:flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-#customer-info__name{
-    display:flex;
-    flex-direction: column;
     gap: 8px;
-    font-size: 14px;
-    color: var(--text-color);
-    padding-bottom: 12px;
+    color: #d70018;
+    font-weight: 700;
 }
-
-#customer-info__phone{
-    display:flex;
-    flex-direction: column;
-    gap: 8px;
-    font-size: 14px;
-    color: var(--text-color);
-    padding-bottom: 12px;
-}
-
-#customer-info__email{
-    display:flex;
-    flex-direction: column;
-    gap: 8px;
-    font-size: 14px;
-    color: var(--text-color);
-    padding-bottom: 12px;
-}
-
-#customer-info__address{
-    display:flex;
-    flex-direction: column;
-    gap: 8px;
-    font-size: 14px;
-    color: var(--text-color);
-    padding-bottom: 12px;
-    resize: none;
-}
-
-#customer-info__address textarea {
-    resize: none;
-}
-
 #checkout-summary__back-btn{
     float: right;
     background-color: #666666;
@@ -163,26 +174,17 @@ body{
     gap: 12px;
 }
 
-.checkout-summary{
-    position:sticky;
-    width:100%;
-    align-items:center;
-    display:flex;
-    justify-content:space-between;
-    z-index:999;
-    background-color: var(--pale-blue-background-color);
-    height: 60px;
-    bottom: 0;
-}
 
 @media (min-width: 769px){
     .cart-item{
-        grid-template-columns: 80px 1.2fr 80px 0.6fr;
+        grid-template-columns: 80px 2fr 1fr 1fr;
     }
     .cart-item__img{ grid-column:1; grid-row:1;}
     .cart-item__name{ grid-column:2; }
     .cart-item__quantity{ grid-column:3;}
-    .cart-item__price{ grid-column:4; grid-row:1; }
-
-
+    .cart-item__total-price{ grid-column:4; grid-row:1; }
+    #customer-info__form input,
+    #customer-info__form textarea{
+        width: 50%;
+    }
 }

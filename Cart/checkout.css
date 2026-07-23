@@ -58,7 +58,7 @@ body{
     grid-row:1;
     font-size: 16px;
     color: var(--text-color);
-    font-weight: 500;
+    font-weight: bold;
     line-height: 1.4;
     padding-right: 10px;
 }
@@ -73,12 +73,20 @@ body{
     padding: 0;
 }
 
+.cart-item__price {
+    grid-column: 2;
+    grid-row:2;
+    gap: 8px;
+    font-weight: 500;
+    justify-self: start;
+}
+
 .cart-item__total-price {
     grid-column: 3;
     grid-row: 2;
     gap: 8px;
     color: #d70018;
-    font-weight: 700;
+    font-weight: bold;
     justify-self: end;
 }
 
@@ -142,12 +150,22 @@ body{
 }
 
 #checkout-summary__total{
-    grid-column: 3;
-    grid-row: 2;
+    align-self: start center;
     gap: 8px;
     color: #d70018;
-    font-weight: 700;
+    font-weight: 700;   
 }
+
+#checkout-summary__total span{
+    align-self: start;
+    font-size: 12px;
+    gap: 8px;
+    color: var(--text-color);
+    font-weight: 500;
+
+}
+
+
 #checkout-summary__back-btn{
     float: right;
     background-color: #666666;
@@ -172,6 +190,55 @@ body{
     display:flex;
     float:right;
     gap: 12px;
+}
+
+/* 1. Cụm phương thức thanh toán (Radio buttons) */
+#payment-methods {
+    margin-bottom: 24px; /* Tạo khoảng cách 24px đẩy các phần bên dưới (QR/Cửa hàng) ra xa */
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Tạo khoảng cách giữa 2 dòng tùy chọn thanh toán cho thoáng */
+}
+
+/* 2. Phần chọn cửa hàng */
+#store-select-container {
+    margin-top: 10px;
+    padding-left: 24px; /* Thụt lề một chút để thẳng hàng với text của radio button */
+}
+
+#store-select-container label {
+    display: block;
+    margin-bottom: 8px; /* Cách chữ với ô dropdown */
+    font-size: 0.95rem;
+    color: #444;
+}
+
+#store-select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 400px; /* Giới hạn chiều dài của ô chọn */
+}
+
+/* 3. Phần mã QR */
+#qr-code-container {
+    margin-top: 10px;
+    padding-left: 24px; /* Thụt lề để đồng bộ với phần chọn cửa hàng */
+}
+
+#qr-code-container p {
+    margin-bottom: 12px; /* Khoảng cách giữa dòng chữ "Vui lòng quét..." và hình QR */
+    color: #444;
+}
+
+#qr-code {
+    max-width: 250px; /* Thu nhỏ mã QR lại vì trong ảnh image_24e492.png nó đang khá to */
+    height: auto;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #fff;
 }
 
 

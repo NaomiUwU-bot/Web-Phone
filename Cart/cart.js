@@ -53,7 +53,7 @@ function renderProducts(){
 
 			const priceDiv = document.createElement('div');
 			priceDiv.className = 'cart-item__price';
-			priceDiv.textContent = `${product.price.toLocaleString()}đ`;
+			priceDiv.textContent = `${product.price.toLocaleString()}₫`;
 
 			const quantityDiv = document.createElement('div');
 			quantityDiv.className = 'cart-item__quantity';
@@ -179,10 +179,10 @@ function updateCartUI() {
 
     if (totalAmount === 0) {
         checkoutBtnEl.disabled = true;
-        cartTotalEl.innerText = "Tạm tính: 0đ";
+        cartTotalEl.innerText = "Tạm tính: 0₫";
     } else {
         checkoutBtnEl.disabled = false;
-        cartTotalEl.innerText = `Tạm tính: ${totalAmount.toLocaleString()}đ`;
+        cartTotalEl.innerText = `Tạm tính: ${totalAmount.toLocaleString()}₫`;
     }
 }
 

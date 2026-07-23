@@ -5,7 +5,7 @@ const infoTabEl = document.getElementById('info-tab');
 const paymentTabEl = document.getElementById('payment-tab');
 const backBtnEl = document.getElementById('checkout-summary__back-btn');
 const confirmBtnEl = document.getElementById('checkout-summary__confirm-btn');
-
+const storeSelectEl = document.getElementById('store-select');
 
 localStorage.setItem('state','info');
 
@@ -49,13 +49,18 @@ function renderProducts(){
         quantityDiv.className = 'cart-item__quantity';
         quantityDiv.textContent = `Số lượng: ${product.quantity}`;
 
+        const priceDiv = document.createElement('div');
+        priceDiv.className = 'cart-item__price';
+        priceDiv.textContent =     `${product.price.toLocaleString()}₫`;
+
         const totalPriceDiv = document.createElement('div');
         totalPriceDiv.className = 'cart-item__total-price';
-        totalPriceDiv.textContent = `Tổng: ${(product.quantity * product.price).toLocaleString()}đ`;
+        totalPriceDiv.textContent = `Tổng: ${(product.quantity * product.price).toLocaleString()}₫`;
 
         productDiv.appendChild(img);
         productDiv.appendChild(nameDiv);
         productDiv.appendChild(quantityDiv);
+        productDiv.appendChild(priceDiv);
         productDiv.appendChild(totalPriceDiv);
         
 
@@ -64,18 +69,24 @@ function renderProducts(){
     });
 }
 
+//bắt sự kiện thay đổi phương thức thanh toán
 const paymentRadioEls = document.querySelectorAll('input[name="payment-method"]');
-const qrCodeContainer = document.getElementById('qr-code-container');
+const qrCodeContainerEl = document.getElementById('qr-code-container');
+const storesContainerEl = document.getElementById('store-select-container')
+let method ='at-store';
 paymentRadioEls.forEach(radio=>{
     radio.addEventListener('change', function(e){
         if (e.target.value === 'qr' && e.target.checked) {
-            qrCodeContainer.classList.remove('hidden');
+            method = 'qr';
+            qrCodeContainerEl.classList.remove('hidden');
+            storesContainerEl.classList.add('hidden');
         } else {
-            qrCodeContainer.classList.add('hidden');
+            method = 'at-store';
+            qrCodeContainerEl.classList.add('hidden');
+            storesContainerEl.classList.remove('hidden');
         }
     });
 });
-
 
 
 backBtnEl.addEventListener('click', function(){
@@ -92,12 +103,17 @@ confirmBtnEl.addEventListener('click', function(){
         infoTabEl.classList.add('hidden');
         paymentTabEl.classList.remove('hidden');
         backBtnEl.classList.remove('hidden');
-        confirmBtnEl.innerText = 'Thanh toán';
+        confirmBtnEl.innerText = 'Mua ngay';
     }else{
-        localStorage.setItem('state', 'done');
-        window.alert('Thanh toan thanh cong');
-        window.location.href = 'cart.html';
-        backBtnEl.classList.add('hidden');
+        if(storeSelectEl.value=="" && method == 'at-store'){
+            window.alert('Vui lòng chọn cửa hàng nhận sản phẩm');
+        }else{
+            localStorage.setItem('state', 'done');
+            window.alert('Thanh toan thanh cong');
+            window.location.href = 'cart.html';
+            backBtnEl.classList.add('hidden');
+        }
+        
     }
 });
 
@@ -106,7 +122,7 @@ let total = 0;
 selectedProducts.forEach(product => {
     total += product.price * product.quantity;
 });
-checkoutSummaryTotalEl.innerText = `Tạm tính: ${total.toLocaleString()}₫`;
+checkoutSummaryTotalEl.innerHTML = `Tổng tiền: ${Math.ceil(total * 1.1).toLocaleString()}₫<span>(đã bao gồm VAT và làm tròn)</span>`;
 
 
 renderProducts();

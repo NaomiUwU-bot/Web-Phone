@@ -22,7 +22,7 @@ body {
 .shop-layout {
     width: 100%;
     max-width: 1800px;
-    margin: 50px auto;
+    margin: 25px auto;
     padding: 0 30px;
     display: grid;
     grid-template-columns: 220px 1fr;
@@ -33,10 +33,10 @@ body {
 .category-menu {
     background: var(--pale-blue-background-color) ;
     border-radius: 15px;
-    padding: 8px;
+    padding: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
-    position: sticky;
-    top: 60px;
+    width: 220px;
+    margin-top: 50px;
 }
 
 .category-menu h3 {
@@ -80,7 +80,7 @@ body {
 }
 
 .section-title h2 {
-    font-size: 20px;
+    font-size: 25px;
     color: var(--text-color);
 }
 

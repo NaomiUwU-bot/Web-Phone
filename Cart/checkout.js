@@ -1,6 +1,6 @@
 const selectedProducts = JSON.parse(localStorage.getItem('selectedProducts')) || [];
 const checkoutProductsListEl = document.getElementById('checkout-products__list');
-const checkoutSummaryTotalEl = document.getElementById('checkout-summary__total');
+// const checkoutSummaryTotalEl = document.getElementById('checkout-summary__total');
 const infoTabEl = document.getElementById('info-tab');
 const paymentTabEl = document.getElementById('payment-tab');
 const backBtnEl = document.getElementById('checkout-summary__back-btn');
@@ -122,7 +122,17 @@ let total = 0;
 selectedProducts.forEach(product => {
     total += product.price * product.quantity;
 });
-checkoutSummaryTotalEl.innerHTML = `Tổng tiền: ${Math.ceil(total * 1.1).toLocaleString()}₫<span>(đã bao gồm VAT và làm tròn)</span>`;
+
+const checkoutSummaryEl = document.getElementById('checkout-summary');
+const checkoutSummaryTotalEl = document.createElement('span');
+checkoutSummaryTotalEl.id = 'checkout-summary__total';
+checkoutSummaryTotalEl.innerText = `Tổng tiền: ${Math.ceil(total * 1.1).toLocaleString()}₫`;
+const vatEl = document.createElement('span');
+vatEl.innerText = '(đã bao gồm VAT và làm tròn)';
+checkoutSummaryTotalEl.appendChild(vatEl);
+checkoutSummaryEl.prepend(checkoutSummaryTotalEl);
+
+// checkoutSummaryTotalEl.innerHTML = `Tổng tiền: ${Math.ceil(total * 1.1).toLocaleString()}₫<span>(đã bao gồm VAT và làm tròn)</span>`;
 
 
 renderProducts();

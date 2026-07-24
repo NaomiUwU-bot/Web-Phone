@@ -146,9 +146,9 @@ body{
     display: flex;
     justify-content: space-between;
     left: 0;
-    bottom: 0; /* luôn nằm bên dưới khung hình*/
+    bottom: 0; 
     height: 60px;
-    z-index: 999; /* luôn nằm trên tất cả các element khác */
+    z-index: 999;
     background-color: var(--pale-blue-background-color);
     border: 1px solid var(--border-divider-color);
 }

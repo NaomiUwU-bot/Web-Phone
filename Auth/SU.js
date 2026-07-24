@@ -1,5 +1,7 @@
 ///LẤY CÁC PHẦN TỬ TỪ HTML///
 
+const users = JSON.parse(localStorage.getItem('users')) || [];
+
 // Lấy thẻ form
 const form = document.querySelector("form");
 
@@ -58,7 +60,8 @@ function saveUser(){
         phone: phone.value,
         password: password.value
     };
-    localStorage.setItem("user", JSON.stringify(user));
+    users.push(user);
+    localStorage.setItem("users", JSON.stringify(users));
 }
 
 

@@ -102,28 +102,20 @@ function login(){
         if(isValid){
 
             // Lấy tài khoản đã đăng ký
-            const user = loadUser();
+            const users = JSON.parse(localStorage.getItem('users')) || [];
 
-            // Kiểm tra đã có tài khoản chưa
-            if(user == null){
-                alert("Chưa có tài khoản. Vui lòng đăng ký!");
-                return;
-            }
-
-            // Kiểm tra thông tin đăng nhập
-            if(
-                tel.value.trim() === user.phone &&
-                password.value === user.password
-            ){
-
-                rememberMe();
-
-                alert("Đăng nhập thành công!");
-
-                window.location.href = "../Home/Home.html";
-            }
-            else{
-                alert("Sai số điện thoại hoặc mật khẩu!");
+            const validUser = users.find(
+              (user) => user.phone == tel.value && user.password == password.value
+            );
+            
+            if (validUser){
+                let user = validUser;
+                user.id = users.indexOf(validUser);
+                loadUser(user);
+                window.alert('Đăng nhập thành công');
+                window.location.href= '../Home/Home.html';
+            }else{
+                window.alert('Tài khoản hoặc mật khẩu sai, vui lòng đăng nhập lại');
             }
         }
     });

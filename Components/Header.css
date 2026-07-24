@@ -17,7 +17,7 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -31,22 +31,23 @@ header {
 }
 
 .nav-wrap {
-  max-width: 1180px;
+  /* max-width: 1180px; */
   margin: 0 auto;
-  display: flex;
+  display: flex;  
   align-items: center;
   justify-content: space-between;
-  padding: 20px 32px;
+  padding: 20px 50px;
 }
 
 .logo {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 22px;
   font-weight: 700;
   letter-spacing: -0.02em;
   display: flex;
   align-items: center;
   gap: 8px;
+  color: #1A56DB;
 }
 
 .logo span {
@@ -57,7 +58,7 @@ header {
 
 nav ul {
   display: flex;
-  gap: 36px;
+  gap: 55px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -103,7 +104,7 @@ nav a.active::after {
 }
 
 .nav-cta:hover { background: var(--accent); }
-
+  
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -118,4 +119,44 @@ nav a.active::after {
   width: 24px;
   height: 2px;
   background: var(--ink);
+}
+
+@media(max-width:768px){
+
+.menu-toggle{
+  display:flex;
+}
+
+.navbar {
+  display:none;
+  flex-direction:column;
+  position:absolute;
+  top:100%;
+  left:0;
+  width:100%;
+  background:white;
+  padding:20px;
+  gap:20px;
+  box-shadow:0 5px 10px rgba(0,0,0,.2);
+
+}
+
+.navbar.active{
+  display:block;
+}
+
+.navbar ul{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.navbar li:last-child{
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+    }
+
+
 }

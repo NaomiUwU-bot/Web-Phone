@@ -1,8 +1,12 @@
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+
+
 :root {
     --text-color: #1E293B;
     --button-color: #1A56DB;
@@ -12,7 +16,7 @@
 }
 
 body{
-    font-family: "Poppins", sans-serif;
+    font-family: "Inter", sans-serif;
     background: var(--pale-blue-background-color);
 }
 
@@ -39,29 +43,6 @@ body{
     box-shadow: 0 15px 40px rgba(0,0,0,0.12);
     position: relative;
     z-index: 2;
-}
-
-.logo{
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    color: var(--button-color);
-    font-weight: 700;
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-
-.logo i{
-    font-size: 38px;
-    color: var(--button-color);
-}
-
-.logo span{
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--text-color);
 }
 
 .tieu-de{

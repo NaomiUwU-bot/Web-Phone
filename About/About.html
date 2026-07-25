@@ -1,26 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Us — DePhone</title>
-<link rel="stylesheet" href="About.css">
-<link rel="stylesheet" href="../Components/Header.css">
-<link rel="stylesheet" href="../Components/Footer.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <link rel="stylesheet" href="About.css">
+  <link rel="stylesheet" href="../Components/Header.css">
+  <link rel="stylesheet" href="../Components/Footer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
+
 <body>
 
-<header id="header"></header>
+<header class="header">
+  <div class="nav-wrap">
+    <a href="#" class="logo"><i class="fa-solid fa-mobile-button"></i>DePhone</a>
+    <nav class="navbar">
+      <ul>
+        <li><a href="../Home/Home.html">Trang chủ</a></li>
+        <li><a href="../About/About.html">About</a></li>
+        <li><a href="../Product/Product.html">Phones</a></li>
+        <li><a href="../Auth/LI.html">Đăng nhập</a></li>
+        <li><a href="../Cart/cart.html" class="nav-cta">Giỏ hàng</a></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
 
 <main>
 
-  <p class="eyebrow">About DePhone</p>
-
   <section class="hero-grid">
     <div>
-      <h1>We sell phones that actually <em>fit your life.</em></h1>
-      <p class="lede">DePhone is a phone shop built around one idea: buying a phone should be simple, honest, and fast. We carry the latest flagship and mid-range devices, hand-check every unit before it ships, and back every sale with real support from real people.</p>
-      <p class="lede">No upsell scripts, no confusing plans — just the right phone, at a fair price, with a team that picks up the phone when you call.</p>
+      <h1>Chúng tôi bán những chiếc điện thoại thực sự <em>phù hợp với cuộc sống của bạn.</em></h1>
+      <p class="lede">DePhone mang đến những mẫu điện thoại mới nhất với trải nghiệm mua sắm đơn giản, minh bạch và nhanh chóng. Mỗi sản phẩm đều được kiểm tra kỹ trước khi giao, cùng đội ngũ hỗ trợ luôn sẵn sàng đồng hành cùng bạn.</p>
+      <p class="lede">Không chiêu trò bán hàng, không những gói dịch vụ rắc rối — chỉ là chiếc điện thoại phù hợp với mức giá hợp lý, cùng một đội ngũ luôn sẵn sàng lắng nghe và hỗ trợ khi bạn cần.</p>
     </div>
     <figure class="figure">
       <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=1000&q=80" alt="Flagship smartphone, our featured device" loading="lazy">
@@ -31,24 +49,24 @@
   <section class="stats-row">
     <div class="stat">
       <div class="num">12k+</div>
-      <div class="label">Phones sold since opening</div>
+      <div class="label">Lượt bán</div>
     </div>
     <div class="stat">
       <div class="num">4.8 / 5</div>
-      <div class="label">Average customer rating</div>
+      <div class="label">Đánh giá trung bình</div>
     </div>
     <div class="stat">
-      <div class="num">24h</div>
-      <div class="label">Average support response time</div>
+      <div class="num">1h</div>
+      <div class="label">Thời gian phản hồi</div>
     </div>
   </section>
 
   <section class="story-grid">
-    <h2>Our story, in short.</h2>
+    <h2>Câu chuyện của chúng tôi</h2>
     <div>
-      <p>DePhone started as a single counter in a shopping street, selling unlocked phones to people tired of long contracts and confusing fine print. Today we're a small team of phone specialists who test, compare, and stock devices we'd actually want to use ourselves.</p>
-      <p>Every phone that leaves our shop is checked for battery health, screen quality, and software updates before it reaches you. If something's not right, we fix it — no fifteen-step return process required.</p>
-      <p>We believe a phone is one of the most personal things you own, so we take the time to match you with the right device instead of just the most expensive one.</p>
+      <p>DePhone khởi đầu từ một cửa hàng nhỏ với mong muốn mang đến những chiếc điện thoại chất lượng và mức giá minh bạch.</p>
+      <p>Mỗi sản phẩm đều được kiểm tra kỹ lưỡng trước khi đến tay khách hàng, từ hiệu năng đến tình trạng thiết bị, để đảm bảo trải nghiệm tốt nhất.</p>
+      <p>Chúng tôi không chỉ bán điện thoại, mà còn giúp bạn chọn đúng sản phẩm phù hợp với nhu cầu, thay vì chỉ giới thiệu mẫu đắt tiền nhất.</p>
     </div>
   </section>
 
@@ -57,6 +75,7 @@
 <footer id="footer"></footer>
 
 <script src="About.js"></script>
+<script src="../Components/Header.js"></script>
 
 </body>
 </html>

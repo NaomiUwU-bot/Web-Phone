@@ -48,11 +48,6 @@ function validateConfirmPassword(password, confirmPassword){
     return password === confirmPassword;
 }
 
-//Lưu tài khoản
-function saveUser(user){
-    
-}
-
 
 // Hiện / Ẩn mật khẩu
 togglePassword.addEventListener("click", function(){
@@ -207,11 +202,7 @@ signup();
 
 
 // Them Header va Footer
-fetch("../Components/Header.html")
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById("header").innerHTML = data;
-    });
+
 
 fetch("../Components/Footer.html")
     .then(response => response.text())

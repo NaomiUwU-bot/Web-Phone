@@ -104,33 +104,25 @@ function login(){
             // Lấy tài khoản đã đăng ký
             const users = JSON.parse(localStorage.getItem('users')) || [];
 
-            // Kiểm tra đã có tài khoản chưa
-            if(user == null){
-                alert("Chưa có tài khoản. Vui lòng đăng ký!");
-                return;
-            }
+            const validUser = users.find(
+              (user) => user.phone == tel.value && user.password == password.value
+            );
+            
+            if (validUser){
+                let user = validUser;
+                user.id = users.indexOf(validUser);
+                loadUser(user);
+                window.alert('Đăng nhập thành công');
 
-            // Kiểm tra thông tin đăng nhập
-            if(
-                tel.value.trim() === user.phone &&
-                password.value === user.password
-            ){
+                // Lưu trạng thái đăng nhập
+                localStorage.setItem("isLogin", "true");
 
-                rememberMe();
+                // Lưu thông tin người đang đăng nhập
+                localStorage.setItem("currentUser", JSON.stringify(user));
 
-                const currentUser = {
-                    name: user.name,
-                    phone: user.phone
-                };
-
-                localStorage.setItem("currentUser", JSON.stringify(currentUser));
-
-                alert("Đăng nhập thành công!");
-
-                window.location.href="../Home/Home.html";
-            }
-            else{
-                alert("Sai số điện thoại hoặc mật khẩu!");
+                window.location.href= '../Home/Home.html';
+            }else{
+                window.alert('Tài khoản hoặc mật khẩu sai, vui lòng đăng nhập lại');
             }
         }
     });
@@ -144,7 +136,9 @@ login();
 ///==============================///
 function logout(){
 
+    localStorage.removeItem("isLogin");
     localStorage.removeItem("currentUser");
+    localStorage.removeItem("rememberPhone");
 
     alert("Đăng xuất thành công!");
 
@@ -152,20 +146,6 @@ function logout(){
 }
 
 
-// Them Header va Footer
-fetch("../Components/Header.html")
-.then(response => response.text())
-.then(data=>{
-
-    document.getElementById("header").innerHTML=data;
-
-    // updateHeader();
-
-    initMenu();
-
-    updateCartCount();
-
-});
 
 fetch("../Components/Footer.html")
     .then(response => response.text())

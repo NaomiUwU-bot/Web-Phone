@@ -136,6 +136,8 @@ function logout(){
     window.location.href = "LI.html";
 }
 
+
+// Them Header va Footer
 fetch("../Components/Header.html")
     .then(response => response.text())
     .then(data => {

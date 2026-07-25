@@ -18,20 +18,20 @@
                 <h3>Danh sách sản phẩm</h3>
                 <div id ="checkout-products__list"></div>
             </div>
-            <div class="customer-info">
+            <div id="customer-info">
                 <h3>Thông tin khách hàng</h3>
                 <form id="customer-info__form">
                     <div id="customer-info__name">
                         <span>Họ và tên</span>
-                        <input type="text" id="customer-name" placeholder="Họ và tên" required>
+                        <input type="text" id="customer-name" placeholder="Họ và tên" readonly>
                     </div>
                     <div id="customer-info__phone">
                         <span>Số điện thoại</span>
-                        <input type="tel" id="customer-phone" placeholder="Số điện thoại" required>
+                        <input type="tel" id="customer-phone" placeholder="Số điện thoại" readonly>
                     </div>
                     <div id="customer-info__email">
                         <span>Email</span>
-                        <input type="email" id="customer-email" placeholder="Email" required>
+                        <input type="email" id="customer-email" placeholder="Email" readonly>
                     </div>
                     <div id="customer-info__address" >
                         <span>Địa chỉ</span>
@@ -57,9 +57,18 @@
                 <p>Vui lòng quét mã QR để thanh toán.</p>
                 <img src="qr.png" alt="QR Code" id="qr-code">
             </div>
+            <div id="store-select-container">
+              <label for="store-select">Chọn cửa hàng nhận / thanh toán:</label>
+              <select id="store-select" class="store-select">
+                <option value="">-- Chọn chi nhánh cửa hàng --</option>
+                <option value="store-3-2">DePhone - Đường 3 Tháng 2, Cần Thơ</option>
+                <option value="store-nvc">DePhone - Đường Nguyễn Văn Cừ, Cần Thơ</option>
+                <option value="store-mt">DePhone - Đường Mậu Thân, Cần Thơ</option>
+              </select>
+            </div>
         </div>
-        <div class="checkout-summary">
-                <span id="checkout-summary__total">Tạm tính: </span>
+        <div class="checkout-summary" id="checkout-summary">
+                <!-- <span id="checkout-summary__total">Tạm tính: </span> -->
                 <div id="checkout-summary__btn-wrap">
                     <button id="checkout-summary__back-btn" class="hidden" >Quay lại</button>
                     <button id="checkout-summary__confirm-btn" >Tiếp tục</button>
@@ -69,6 +78,7 @@
 
     <footer id="footer"></footer>
 
+    <script src="../Auth/authentication.js"></script>
 	<script src="checkout.js"></script>
 </body>
 </html>

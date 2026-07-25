@@ -1,7 +1,4 @@
 ///LẤY CÁC PHẦN TỬ TỪ HTML///
-
-const users = JSON.parse(localStorage.getItem('users')) || [];
-
 // Lấy thẻ form
 const form = document.querySelector("form");
 
@@ -52,16 +49,8 @@ function validateConfirmPassword(password, confirmPassword){
 }
 
 //Lưu tài khoản
-function saveUser(){
-    const user = {
-        fullname: fullname.value,
-        birthday: ngaysinh.value,
-        email: email.value,
-        phone: phone.value,
-        password: password.value
-    };
-    users.push(user);
-    localStorage.setItem("users", JSON.stringify(users));
+function saveUser(user){
+    
 }
 
 
@@ -145,7 +134,7 @@ function signup(){
             isValid = false;
         }
         else if(!validatePhone(phone.value)){
-            errors[2].textContent = "Số điện thoại phải gồm đúng 10 số.";
+            errors[2].textContent = "Số điện thoại không hợp lệ.";
             isValid = false;
         }
 
@@ -199,9 +188,12 @@ function signup(){
                 ngaysinh: ngaysinh.value,
                 phone: phone.value.trim(),
                 email: email.value.trim(),
-                password: password.value
+                password: password.value,
+                inCartProducts: []
             };
-            saveUser(user);
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            users.push(user);
+            localStorage.setItem("users", JSON.stringify(users));
             alert("Đăng ký thành công!");
             form.reset();
         }

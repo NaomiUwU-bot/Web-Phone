@@ -56,9 +56,9 @@ function filterProducts() {
 
     });
 }
-<<<<<<< HEAD
+
 filterProducts();//gọi hàm
-=======
+
 filterProducts();
 
 const productContainerEl = document.getElementsByClassName('product-section')[0];
@@ -89,4 +89,4 @@ productContainerEl.addEventListener('click', function(e){
         }
     }
 });
->>>>>>> ec9d77de38991d46c124bf6efe7d622e4d6a8f21
+

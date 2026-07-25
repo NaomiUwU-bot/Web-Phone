@@ -139,26 +139,28 @@ function signup(){
         }
 
 
-        /// EMAIL
-        if(email.value.trim() === ""){
-            errors[2].textContent = "Vui lòng nhập Email.";
-            isValid = false;
-        }
-        else if(!validateEmail(email.value)){
-            errors[2].textContent = "Email không đúng định dạng.";
-            isValid = false;
-        }
-
-
         /// SỐ ĐIỆN THOẠI
         if(phone.value.trim() === ""){
-            errors[3].textContent = "Vui lòng nhập số điện thoại.";
+            errors[2].textContent = "Vui lòng nhập số điện thoại.";
             isValid = false;
         }
         else if(!validatePhone(phone.value)){
-            errors[3].textContent = "Số điện thoại phải gồm đúng 10 số.";
+            errors[2].textContent = "Số điện thoại phải gồm đúng 10 số.";
             isValid = false;
         }
+
+        /// EMAIL
+        if(email.value.trim() === ""){
+            errors[3].textContent = "Vui lòng nhập Email.";
+            isValid = false;
+        }
+        else if(!validateEmail(email.value)){
+            errors[3].textContent = "Email không đúng định dạng.";
+            isValid = false;
+        }
+
+
+        
 
 
         /// MẬT KHẨU

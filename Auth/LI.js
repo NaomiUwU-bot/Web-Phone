@@ -118,9 +118,16 @@ function login(){
 
                 rememberMe();
 
+                const currentUser = {
+                    name: user.name,
+                    phone: user.phone
+                };
+
+                localStorage.setItem("currentUser", JSON.stringify(currentUser));
+
                 alert("Đăng nhập thành công!");
 
-                window.location.href = "../Home/Home.html";
+                window.location.href="../Home/Home.html";
             }
             else{
                 alert("Sai số điện thoại hoặc mật khẩu!");
@@ -137,7 +144,7 @@ login();
 ///==============================///
 function logout(){
 
-    localStorage.removeItem("rememberPhone");
+    localStorage.removeItem("currentUser");
 
     alert("Đăng xuất thành công!");
 
@@ -147,10 +154,18 @@ function logout(){
 
 // Them Header va Footer
 fetch("../Components/Header.html")
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById("header").innerHTML = data;
-    });
+.then(response => response.text())
+.then(data=>{
+
+    document.getElementById("header").innerHTML=data;
+
+    // updateHeader();
+
+    initMenu();
+
+    updateCartCount();
+
+});
 
 fetch("../Components/Footer.html")
     .then(response => response.text())

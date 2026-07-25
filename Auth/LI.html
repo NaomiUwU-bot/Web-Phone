@@ -11,116 +11,111 @@
 </head>
 <body>
     <header id="header"></header>
-    
-    <div class="login-container">
-        <div class="wrapper">
-            <div class="trái">
-                <div class="backround-trái">
-                    <div class="banner">
-                        <h1>Khám phá<br>thế giới điện thoại<br>chính hãng</h1>
-                        <div class="tính-năng">
+    <main>
+        <div class="login-container">
+            <div class="wrapper">
+                <div class="trái">
+                    <div class="backround-trái">
+                        <div class="banner">
+                            <h1>Khám phá<br>thế giới điện thoại<br>chính hãng</h1>
+                            <div class="tính-năng">
 
-                            <div class="item">
-                                <i class="fa-solid fa-shield-halved"></i>
-                                <span>Chính hãng 100%</span>
+                                <div class="item">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                    <span>Chính hãng 100%</span>
+                                </div>
+
+                                <div class="item">
+                                    <i class="fa-solid fa-shield"></i>
+                                    <span>Bảo hành 12 tháng</span>
+                                </div>
+
+                                <div class="item">
+                                    <i class="fa-solid fa-truck"></i>
+                                    <span>Giao hàng toàn quốc</span>
+                                </div>
+
+                                <div class="item">
+                                    <i class="fa-solid fa-percent"></i>
+                                    <span>Trả góp 0% lãi suất</span>
+                                </div>
+
                             </div>
-
-                            <div class="item">
-                                <i class="fa-solid fa-shield"></i>
-                                <span>Bảo hành 12 tháng</span>
+                            <div class="banner-image">
+                                <img src="" alt="">
                             </div>
-
-                            <div class="item">
-                                <i class="fa-solid fa-truck"></i>
-                                <span>Giao hàng toàn quốc</span>
-                            </div>
-
-                            <div class="item">
-                                <i class="fa-solid fa-percent"></i>
-                                <span>Trả góp 0% lãi suất</span>
-                            </div>
-
                         </div>
-                        <div class="banner-image">
-                            <img src="" alt="">
+                    </div>    
+                </div>
+
+
+                <div class="phải">  
+                    <div class="login-content">
+                            
+                        <div class="banner-phải">
+                            <h1>Chào mừng trở lại!</h1>
+                            <p>Đăng nhập để tiếp tục trải nghiệm thế giới công nghệ tại DePhone</p>
                         </div>
                     </div>
-                </div>    
-            </div>
 
+                    <div class="container">     
+                        <h2>Đăng nhập</h2><br>
+                        <form action="#" method="post">
 
-            <div class="phải">  
-                <div class="login-content">
-                    <!-- <div class="logo">
-                        <i class="fa-solid fa-mobile-screen-button"></i>
-                        <span>JET JET STORE</span>
-                    </div> -->
+                        <div class="nhập">
+                            <label>Số điện thoại</label>
+                            <div class="input-box">
+                                
+                                <input 
+                                type="tel" 
+                                name="sdt" 
+                                placeholder="Nhập số điện thoại" 
+                                autocomplete="tel" 
+                                required>
+                            </div>
+                                <small class="error"></small>
+                        </div> 
+
+                        <div class="nhập">
+                            <label>Mật khẩu</label>
+                            <div class="input-box password-box">
+                                
+                                <input
+                                id="password" 
+                                type="password" 
+                                name="password" 
+                                placeholder="Nhập mật khẩu" 
+                                autocomplete="current-password" 
+                                required>
+                                <i class="fa-solid fa-eye-slash toggle-password" id="togglePassword"></i>
+                            </div>
+                                <small class="error"></small>
+                        </div>
+
+                        <div class="nhớ-quên">
+                            <label>
+                                <input 
+                                type="checkbox" 
+                                name="remember">
+                                Ghi nhớ đăng nhập
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn">Đăng nhập</button>
+
+                        <div class="link">
+                            <p>Tôi không có tài khoản?  <a href="SU.html">Đăng ký ngay</a></p>
+                        </div>
                         
-                    <div class="banner-phải">
-                        <h1>Chào mừng trở lại!</h1>
-                        <p>Đăng nhập để tiếp tục trải nghiệm thế giới công nghệ tại Jet Jet Store</p>
+                        </form>
                     </div>
+
                 </div>
-
-                <div class="container">     
-                    <h2>Đăng nhập</h2><br>
-                    <form action="#" method="post">
-
-                    <div class="nhập">
-                        <label>Số điện thoại</label>
-                        <div class="input-box">
-                            
-                            <input 
-                            type="tel" 
-                            name="sdt" 
-                            placeholder="Nhập số điện thoại" 
-                            autocomplete="tel" 
-                            required>
-                        </div>
-                            <small class="error"></small>
-                    </div> 
-
-                    <div class="nhập">
-                        <label>Mật khẩu</label>
-                        <div class="input-box password-box">
-                            
-                            <input
-                            id="password" 
-                            type="password" 
-                            name="password" 
-                            placeholder="Nhập mật khẩu" 
-                            autocomplete="current-password" 
-                            required>
-                            <i class="fa-solid fa-eye-slash toggle-password" id="togglePassword"></i>
-                        </div>
-                            <small class="error"></small>
-                    </div>
-
-                    <div class="nhớ-quên">
-                        <label>
-                            <input 
-                            type="checkbox" 
-                            name="remember">
-                            Ghi nhớ đăng nhập
-                        </label>
-                    </div>
-
-                    <button type="submit" class="btn">Đăng nhập</button>
-
-                    <div class="link">
-                        <p>Tôi không có tài khoản?  <a href="SU.html">Đăng ký ngay</a></p>
-                    </div>
-                    
-                    </form>
-                </div>
-
             </div>
         </div>
-    </div>    
-
+    </main>
     <footer id="footer"></footer>
-
-    <script src="storage.js"></script>
+    <script src="authentication.js"></script>
     <script src="LI.js"></script>
 </body>
 </html>

@@ -102,7 +102,7 @@ function login(){
         if(isValid){
 
             // Lấy tài khoản đã đăng ký
-            const user = loadUser();
+            const users = JSON.parse(localStorage.getItem('users')) || [];
 
             // Kiểm tra đã có tài khoản chưa
             if(user == null){

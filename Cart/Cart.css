@@ -8,33 +8,29 @@
 }
 
 body{
-	font-family: "Inter", sans-serif;
-	margin: 0;
-	padding: 0;
-	background-color: #f4f4f9 ;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9 ;
 }
 
 
 .cart{
-	position:relative;
-	flex-direction: column;
-	display: flex;
-	margin: 20px auto;
-	gap: 20px;
-	padding: 0 15px;
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    gap: 20px;
+    padding: 0 15px;
     max-width: 1200px;
-    flex: 1;
 }
 
 .products-section{
-	width: 100%;
+    width: 100%;
 }
 
 .cart-item{
-	display:grid;
+    display:grid;
     grid-template-columns: 40px 80px 1.2fr 1fr;
     column-gap: 10px;
     row-gap: 4px;
@@ -81,9 +77,9 @@ body{
 .cart-item__img{
     grid-column: 2;
     grid-row: 1/3;
-	width: 80px;
-	height: 80px;
-	object-fit: cover;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
 }
 
 .cart-item__name {
@@ -143,28 +139,28 @@ body{
 }
 
 .cart-summary{
-	position: sticky;
-	width: 100%;
+    position: sticky;
+    width: 100%;
     align-self: center;
-	align-items: center;   
-	display: flex;
-	justify-content: space-between;
-	left: 0;
-	bottom: 0; /* luôn nằm bên dưới khung hình*/
-	height: 60px;
-	z-index: 999; /* luôn nằm trên tất cả các element khác */
-	background-color: var(--pale-blue-background-color);
+    align-items: center;   
+    display: flex;
+    justify-content: space-between;
+    left: 0;
+    bottom: 0; 
+    height: 60px;
+    z-index: 999;
+    background-color: var(--pale-blue-background-color);
     border: 1px solid var(--border-divider-color);
 }
 
 .cart-summary__left{
-	float:left;
-	padding: 12px;
+    float:left;
+    padding: 12px;
 }
 
 .cart-summary__right{
-	float: right;
-	padding : 12px;
+    float: right;
+    padding : 12px;
     width: 200px;
 }
 

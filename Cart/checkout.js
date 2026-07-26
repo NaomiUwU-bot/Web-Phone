@@ -100,6 +100,7 @@ if (!isLogin()){
                 window.alert('Vui lòng chọn cửa hàng nhận sản phẩm');
             }else{
                 localStorage.setItem('state', 'done');
+                localStorage.removeItem('selectedProducts');
                 window.alert('Thanh toan thanh cong');
                 window.location.href = 'cart.html';
                 backBtnEl.classList.add('hidden');

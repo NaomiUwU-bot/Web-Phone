@@ -55,7 +55,30 @@ const productContainerEl = document.getElementsByClassName('product-detail')[0];
 
 //Bắt sự kiện click vào nút thêm vào giỏ hàng để lấy thông tin và thêm nó vào localStorage
 productContainerEl.addEventListener('click', function(e){
-    if (e.target.id == "addCart"){
+    //Ấn nút mua ngay
+    if (e.target.id == "buyNow"){
+        if (isLogin()){
+            let productImage = productContainerEl.querySelector('#mainImage').src;
+            let productName = productContainerEl.querySelector('#productName').innerText;
+            let productQuantity =1;
+            let productPrice = productContainerEl.querySelector('#productPrice').innerText;
+            productPrice = parseInt(productPrice.replace(/\D/g, ""), 10);
+            let newProduct = [{
+                name: productName,
+                image: productImage,
+                quantity: productQuantity,
+                price: productPrice,
+                checked: true 
+            }];
+            localStorage.setItem('selectedProducts', JSON.stringify(newProduct));
+            window.location.href = "../Cart/checkout.html";
+        }else{
+            window.alert('Bạn chưa đăng nhập. Hãy đăng nhập để sử dụng chức năng này');
+            window.location.href = "../Auth/Li.html";
+        }
+    }
+    //Ấn nút thêm vào giỏ hàng
+    else if (e.target.id == "addCart"){
         if (isLogin()){
             let productImage = productContainerEl.querySelector('#mainImage').src;
             let productName = productContainerEl.querySelector('#productName').innerText;

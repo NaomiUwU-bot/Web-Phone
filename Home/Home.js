@@ -21,14 +21,14 @@ document.querySelectorAll('.wish-btn').forEach(btn => {
 });
 
 
-const productContainerEl = document.getElementsByClassName('product-grid')[0];
+const productContainerEl = document.getElementsByClassName('product-section')[0];
 //Bắt sự kiện click vào nút thêm vào giỏ hàng để lấy id và thêm nó vào local storage
 productContainerEl.addEventListener('click', function(e){
-  if (e.target.classList.contains('add-cart-btn')){
+  if (e.target.classList.contains('buy-btn')){
     if(isLogin()){
       const productEl = e.target.parentElement.parentElement;
       let productImage = productEl.querySelector('img').src;
-      let productName = productEl.querySelector('.product-name').innerText;
+      let productName = productEl.querySelector('h5').innerText;
       let productQuantity =1;
       let productPrice = productEl.querySelector('.price').innerText;
       productPrice = parseInt(productPrice.replace(/\D/g, ""), 10);
@@ -42,7 +42,7 @@ productContainerEl.addEventListener('click', function(e){
       addToCart(newProduct);
     }else{
       window.alert('Bạn chưa đăng nhập. Hãy đăng nhập để sử dụng chức năng này');
-      window.location.href = "../Auth/Li.html";
+      window.location.href = "../Auth/LI.html";
     }
   }
 });

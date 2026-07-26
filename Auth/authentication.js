@@ -6,7 +6,6 @@ function logout(){
     localStorage.removeItem('currentUser');
     localStorage.removeItem('selectedProducts');
     localStorage.removeItem('state');
-
 }
 
 function loadUser(user){

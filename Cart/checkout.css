@@ -127,6 +127,10 @@ body{
     gap: 4px; 
 }
 
+.error{
+    color:red !important;
+}
+
 #customer-info__address textarea{
     resize: none;
 }

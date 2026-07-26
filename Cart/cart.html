@@ -10,71 +10,87 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
-<header class="header">
-  <div class="nav-wrap">
-
-    <a href="#" class="logo">
-      <i class="fa-solid fa-mobile-button"></i>DePhone
-    </a>
-
-    <nav class="navbar">
-      <ul>
-        <li><a href="../Home/Home.html">Trang chủ</a></li>
-        <li><a href="../About/About.html">About Us</a></li>
-        <li><a href="../Product/Product.html">Sản phẩm</a></li>
-        <li id="login-item"><a href="../Auth/LI.html">Đăng nhập</a></li>
-        <li id="user-item" style="display:none;"><a href="#" id="user-name"></a>
-        <li id="logout-item" style="display:none;"><a href="#" id="logout-btn">Đăng xuất</a></li>
-        </li>
-      </ul>
-    </nav>
-
-    <a href="../Cart/cart.html" class="nav-cta cart-link">
-        Giỏ hàng
-        <span id="cart-count" class="cart-count">0</span>
-    </a>
-
-    <button class="menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-  </div>
-</header>
-
-	<main class="cart">
-		<section id="cart-actions">
-			<label>
-                <input type="checkbox" id="select-all-checkbox" class="cart-item__checkbox">
-                <span>Chọn tất cả</span>
-            </label>
-            <label>
-            	<button id="delete-all-btn" aria-label="Xóa tất cả">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                    </svg>
-			    </button>
-			    <span>Xóa tất cả</span>
-            </label>
-            
-		</section>
-		<section class="products-section">
-			<div id="product-list" class="products-section__list"></div>
-		</section>
-		<section id="cart-summary" class="cart-summary">
-			<div class="cart-summary__left">
-				<label class="cart-summary__label">
-					<span id="cart-summary__total">Tạm tính: 0đ</span>
-				</label>
-			</div>
-			<div class="cart-summary__right">
-				<button id="cart-summary__checkout-btn" disabled>Mua hàng</button>
-			</div>
-		</section>
-	</main>
-
-	<footer id="footer"></footer>
-
+  <header>
+    <div class="nav-wrap">
+      <a href="#" class="logo">
+        <i class="fa-solid fa-mobile-button"></i>DePhone
+      </a>
+      <nav class="navbar">
+        <ul>
+          <li><a href="../Home/Home.html">Trang chủ</a></li>
+          <li><a href="../About/About.html">About Us</a></li>
+          <li><a href="../Product/Product.html">Sản phẩm</a></li>
+          <li id="login-item"><a href="../Auth/LI.html">Đăng nhập</a></li>
+          <li id="user-item" style="display:none;"><a href="#" id="user-name"></a>
+          <li id="logout-item" style="display:none;"><a href="#" id="logout-btn">Đăng xuất</a></li>
+          </li>
+        </ul>
+      </nav>
+      <a href="../Cart/cart.html" class="nav-cta cart-link">
+          Giỏ hàng
+          <span id="cart-count" class="cart-count">0</span>
+      </a>
+      <button class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+  <main class="cart">
+      <section id="cart-actions">
+        <label>
+                  <input type="checkbox" id="select-all-checkbox" class="cart-item__checkbox">
+                  <span>Chọn tất cả</span>
+              </label>
+              <label>
+                <button id="delete-all-btn" aria-label="Xóa tất cả">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                      </svg>
+            </button>
+            <span>Xóa tất cả</span>
+              </label>
+              
+      </section>
+      <section class="products-section">
+        <div id="product-list" class="products-section__list"></div>
+      </section>
+      <section id="cart-summary" class="cart-summary">
+        <div class="cart-summary__left">
+          <label class="cart-summary__label">
+            <span id="cart-summary__total">Tạm tính: 0đ</span>
+          </label>
+        </div>
+        <div class="cart-summary__right">
+          <button id="cart-summary__checkout-btn" disabled>Mua hàng</button>
+        </div>
+      </section>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <h3>Cửa hàng của chúng tôi</h3>
+        <address>
+          <strong>DePhone</strong><br>
+          Đường 3 Tháng 2, Thành phố Cần Thơ, Việt Nam<br>
+          Đường Mậu Thân, Thành phố Cần Thơ, Việt Nam<br>
+        </address>
+      </div>
+      <div>
+        <h3>Liên hệ</h3>
+        <p class="footer-contact">
+          Số điện thoại: <a href="tel:+842839991234">+84 28 3999 1234</a><br>
+          Email: <a href="mailto:hello@dephone.vn">dephone@gmail.com</a><br>
+          Giờ mở cửa, 9:00 — 21:00
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 DePhone.</span>
+      <span>All rights reserved.</span>
+    </div>
+  </footer>
+  <script src="../Components/Header.js"></script>
 	<script src="../Auth/authentication.js"></script>
 	<script src="cart.js"></script>
 </body>

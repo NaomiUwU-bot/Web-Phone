@@ -1,10 +1,3 @@
-// Them Header va Footer
-
-fetch("../Components/Footer.html")
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById("footer").innerHTML = data;
-    });
 
 function filterProducts() {
     // Lấy tất cả menu hãng
@@ -62,6 +55,7 @@ productContainerEl.addEventListener('click', function(e){
                 checked: false 
             };
             addToCart(newProduct);
+            updateCartCount();
         }
         else{
             window.alert('Bạn chưa đăng nhập. Hãy đăng nhập để sử dụng chức năng này');

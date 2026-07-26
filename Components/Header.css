@@ -30,6 +30,8 @@ header {
   border-bottom: 1px solid var(--line);
 }
 
+
+
 .nav-wrap {
   /* max-width: 1180px; */
   margin: 0 auto;
@@ -151,6 +153,17 @@ nav a.active::after {
 
 }
 
+#user-name{
+    color: #2563eb;
+
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+
 @media(max-width:768px){
 
 .menu-toggle{
@@ -181,5 +194,8 @@ nav a.active::after {
   gap: 20px;
   padding: 20px;
 }
+
+
+
 
 }

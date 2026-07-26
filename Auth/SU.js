@@ -204,8 +204,3 @@ signup();
 // Them Header va Footer
 
 
-fetch("../Components/Footer.html")
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById("footer").innerHTML = data;
-    });

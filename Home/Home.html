@@ -14,405 +14,426 @@
 </head>
 
 <body>
-  <header class="header">
-    <div class="nav-wrap">
+    <header>
+        <div class="nav-wrap">
 
-      <a href="#" class="logo">
-        <i class="fa-solid fa-mobile-button"></i>DePhone
-      </a>
+        <a href="#" class="logo">
+            <i class="fa-solid fa-mobile-button"></i>DePhone
+        </a>
 
-      <nav class="navbar">
-        <ul>
-          <li><a href="../Home/Home.html">Trang chủ</a></li>
-          <li><a href="../About/About.html">About Us</a></li>
-          <li><a href="../Product/Product.html">Sản phẩm</a></li>
-          <li id="login-item"><a href="../Auth/LI.html">Đăng nhập</a></li>
-          <li id="user-item" style="display:none;"><a href="#" id="user-name"></a>
-          <li id="logout-item" style="display:none;"><a href="#" id="logout-btn">Đăng xuất</a></li>
-          </li>
-        </ul>
-      </nav>
+        <nav class="navbar">
+            <ul>
+            <li><a href="../Home/Home.html">Trang chủ</a></li>
+            <li><a href="../About/About.html">About Us</a></li>
+            <li><a href="../Product/Product.html">Sản phẩm</a></li>
+            <li id="login-item"><a href="../Auth/LI.html">Đăng nhập</a></li>
+            <li id="user-item" style="display:none;"><a href="#" id="user-name"></a>
+            <li id="logout-item" style="display:none;"><a href="#" id="logout-btn">Đăng xuất</a></li>
+            </li>
+            </ul>
+        </nav>
 
-      <a href="../Cart/cart.html" class="nav-cta cart-link">
-          Giỏ hàng
-          <span id="cart-count" class="cart-count">0</span>
-      </a>
+        <a href="../Cart/cart.html" class="nav-cta cart-link">
+            Giỏ hàng
+            <span id="cart-count" class="cart-count">0</span>
+        </a>
 
-      <button class="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+        <button class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-    </div>
-  </header>
-
-<main>
-
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-copy">
-          <h1>Điện thoại <span>chính hãng</span><br>giá tốt mỗi ngày</h1>
-          <p>DePhone mang đến hàng ngàn mẫu smartphone từ Apple, Samsung, Xiaomi... với cam kết chính hãng 100%, bảo hành tận tâm và giao hàng siêu tốc trong 2 giờ.</p>
-          <div class="hero-actions">
-            <a href="#san-pham" class="btn btn-primary">Mua ngay hôm nay →</a>
-          </div>
         </div>
-        <div class="hero-visual">
-          <div class="phone-frame">
-            <img src="https://images.unsplash.com/photo-1592286927505-1def25115558?w=600&q=80" alt="Điện thoại nổi bật">
-          </div>
+    </header>
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+        <div class="container">
+            <div class="hero-copy">
+            <h1>Điện thoại <span>chính hãng</span><br>giá tốt mỗi ngày</h1>
+            <p>DePhone mang đến hàng ngàn mẫu smartphone từ Apple, Samsung, Xiaomi... với cam kết chính hãng 100%, bảo hành tận tâm và giao hàng siêu tốc trong 2 giờ.</p>
+            <div class="hero-actions">
+                <a href="../Product/Product.html" class="btn btn-primary">Mua ngay hôm nay →</a>
+            </div>
+            </div>
+            <div class="hero-visual">
+            <div class="phone-frame">
+                <img src="https://images.unsplash.com/photo-1592286927505-1def25115558?w=600&q=80" alt="Điện thoại nổi bật">
+            </div>
+            </div>
         </div>
-      </div>
-    </section>
-
-    <!-- FEATURED PRODUCTS -->
-    <section class="section" id="san-pham">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Sản phẩm nổi bật</h2>
-            <p>Được khách hàng tin dùng và đánh giá cao nhất</p>
-          </div>
-        </div>
-
-        <div class="product-grid" id="productGrid"></div>
-        <section class="product-section">
-
-          <!--Danh sách sản phẩm-->
-          <div class="product-container">
-
-            <!--sản phẩm 1-->
-            <div class="product" data-brand="oppo">
-              <span class="product-badge">Mới</span>
-              <!--Hình ảnh sản phẩm-->
-              <div class="product-image">
-                  <img src="../img/Ảnh sản phẩm/oppo-a5i-pro.jpg" alt="oppo-a5i-pro">
-              </div>
-
-              <!--Thông tin đánh giá-->
-              <div class="product-rating">
-                  <span>
-                      <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i> 4.9
-                  </span>
-                  <span class="sold"> Đã bán 11.2k
-                  </span>
-              </div>
-
-              <!--Thông tin sản phẩm-->
-              <div class="product-info">
-                  <h5> OPPO A5i Pro 8GB/128GB</h5>
-                  <div class="specs">
-                      <span>8GB RAM</span>
-                      <span>128GB</span>
-                      <span>2.1 GHz</span>
-                  </div>
-                  <p class="price">6.290.000 VNĐ</p>
-              </div>
-              <!--Chức năng-->
-              <div class="product-action">
-                  <button class="buy-btn"><i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ hàng
-                  </button>
-                  <a href="../Product-detail/oppo-a5i-pro.html" class="detail-link">Xem chi tiết</a>
-              </div>
-            </div>
-
-            <!--sản phẩm 2-->
-            <div class="product" data-brand="iphone">
-                <span class="product-badge">Hot</span>
-                <!--Hình ảnh sản phẩm-->
-                <div class="product-image">
-                    <img src="../img/Ảnh sản phẩm/iphone-13-den.jpg" alt="iphone-13-den">
-                </div>
-
-                <!--Thông tin đánh giá-->
-                <div class="product-rating">
-                    <span>
-                        <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i> 4.9
-                    </span>
-                    <span class="sold"> Đã bán 270.7k
-                    </span>
-                </div>
-
-                <!--Thông tin sản phẩm-->
-                <div class="product-info">
-                    <h5> iPhone 13 128GB</h5>
-                    <div class="specs">
-                        <span>4GB RAM</span>
-                        <span>128GB</span>
-                        <span>3.22 GHz</span>
-                    </div>
-                    <p class="price">11.990.000 VNĐ</p>
-                </div>
-                <!--Chức năng-->
-                <div class="product-action">
-                    <button class="buy-btn"><i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
-                    <a href="../Product-detail/iphone-13-den.html" class="detail-link">Xem chi tiết</a>
-                </div>
-            </div>
-
-            <!--sản phẩm 10-->
-            <div class="product" data-brand="samsung">
-                <span class="product-badge">Mới</span>
-                <!--Hình ảnh sản phẩm-->
-                <div class="product-image">
-                        <img src="../img/Ảnh sản phẩm/samsung-galaxy-z-fold7-black.jpg" alt="samsung-galaxy-z-fold7-black">
-                </div>
-
-                <!--Thông tin đánh giá-->
-                <div class="product-rating">
-                    <span>
-                        <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i> 4.9
-                    </span>
-                    <span class="sold"> Đã bán 6.9k
-                    </span>
-                </div>
-
-                <!--Thông tin sản phẩm-->
-                <div class="product-info">
-                    <h5> Samsung Galaxy Z Fold7 5G 12GB/256GB</h5>
-                    <div class="specs">
-                        <span>12GB RAM</span>
-                        <span>QXGA+</span>
-                        <span>4.47 GHz</span>
-                    </div>
-                    <p class="price">41.990.000 VNĐ</p>
-                </div>
-                <!--Chức năng-->
-                <div class="product-action">
-                    <button class="buy-btn"><i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
-                    <a href="../Product-detail/samsung-galaxy-z-fold7-black.html" class="detail-link">Xem chi tiết</a>
-                </div>
-            </div>
-
-            <!--sản phẩm 11-->
-            <div class="product" data-brand="oppo">
-                <span class="product-badge">New</span>
-                <!--Hình ảnh sản phẩm-->
-                <div class="product-image">
-                        <img src="../img/Ảnh sản phẩm/oppo-reno13-blue.jpg" alt="oppo-reno13-blue">
-                </div>
-
-                <!--Thông tin đánh giá-->
-                <div class="product-rating">
-                    <span>
-                        <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i> 4.9
-                    </span>
-                    <span class="sold"> Đã bán 21.2k
-                    </span>
-                </div>
-
-                <!--Thông tin sản phẩm-->
-                <div class="product-info">
-                    <h5> OPPO Reno13 5G 12GB/256GB</h5>
-                    <div class="specs">
-                        <span>12GB RAM</span>
-                        <span>256GB</span>
-                        <span>1.5K</span>
-                    </div>
-                    <p class="price">13.200.000 VNĐ</p>
-                </div>
-                <!--Chức năng-->
-                <div class="product-action">
-                    <button class="buy-btn"><i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
-                    <a href="../Product-detail/oppo-reno13-blue.html" class="detail-link">Xem chi tiết</a>
-                </div>
-            </div>
-
-            <!--sản phẩm 12-->
-            <div class="product" data-brand="samsung">
-                <span class="product-badge">New</span>
-                <!--Hình ảnh sản phẩm-->
-                <div class="product-image">
-                        <img src="../img/Ảnh sản phẩm/samsung-galaxy-s25-fe-blue.jpg" alt="samsung-galaxy-s25-fe-blue">
-                </div>
-
-                <!--Thông tin đánh giá-->
-                <div class="product-rating">
-                    <span>
-                        <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i> 4.9
-                    </span>
-                    <span class="sold"> Đã bán 5.5k
-                    </span>
-                </div>
-
-                <!--Thông tin sản phẩm-->
-                <div class="product-info">
-                    <h5> Samsung Galaxy S25 FE 5G 8GB/128GB</h5>
-                    <div class="specs">
-                        <span>8GB RAM</span>
-                        <span>128GB</span>
-                        <span>3.2 GHz</span>
-                    </div>
-                    <p class="price">13.590.000 VNĐ</p>
-                </div>
-                <!--Chức năng-->
-                <div class="product-action">
-                    <button class="buy-btn"><i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
-                    <a href="../Product-detail/samsung-galaxy-s25-fe-blue.html" class="detail-link">Xem chi tiết</a>
-                </div>
-            </div>
-
-            <!--sản phẩm 13-->
-            <div class="product" data-brand="iphone">
-                <span class="product-badge">Mới</span>
-                <!--Hình ảnh sản phẩm-->
-                <div class="product-image">
-                        <img src="../img/Ảnh sản phẩm/iphone-17e-pink.jpg" alt="iphone-17e-pink">
-                </div>
-
-                <!--Thông tin đánh giá-->
-                <div class="product-rating">
-                    <span>
-                        <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i> 4.9
-                    </span>
-                    <span class="sold"> Đã bán 2.7k
-                    </span>
-                </div>
-
-                <!--Thông tin sản phẩm-->
-                <div class="product-info">
-                    <h5> iPhone 17e 256GB</h5>
-                    <div class="specs">
-                        <span>Super Retina XDR</span>
-                        <span>256GB</span>
-                        <span>6.1"</span>
-                    </div>
-                    <p class="price">17.590.000 VNĐ</p>
-                </div>
-                <!--Chức năng-->
-                <div class="product-action">
-                    <button class="buy-btn"><i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
-                    <a href="../Product-detail/iphone-17e-pink.html" class="detail-link">Xem chi tiết</a>
-                </div>
-            </div>
-
-            <!--sản phẩm 14-->
-            <div class="product" data-brand="iphone">
-                <span class="product-badge">Hot</span>
-                <!--Hình ảnh sản phẩm-->
-                <div class="product-image">
-                        <img src="../img/Ảnh sản phẩm/iphone-16-plus-xanh-luu-ly.jpg" alt="iphone-16-plus-xanh-luu-ly">
-                </div>
-
-                <!--Thông tin đánh giá-->
-                <div class="product-rating">
-                    <span>
-                        <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i> 4.9
-                    </span>
-                    <span class="sold"> Đã bán 26.9k
-                    </span>
-                </div>
-
-                <!--Thông tin sản phẩm-->
-                <div class="product-info">
-                    <h5> iPhone 16 Plus 128GB</h5>
-                    <div class="specs">
-                        <span>8GB RAM</span>
-                        <span>128GB</span>
-                        <span>2.1 GHz</span>
-                    </div>
-                    <p class="price">23.990.000 VNĐ</p>
-                </div>
-                <!--Chức năng-->
-                <div class="product-action">
-                    <button class="buy-btn"><i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
-                    <a href="../Product-detail/iphone-16-plus-xanh-luu-ly.html" class="detail-link">Xem chi tiết</a>
-                </div>
-            </div>
-
-            <!--sản phẩm 15-->
-            <div class="product" data-brand="oppo">
-                <span class="product-badge">Hot</span>
-                <!--Hình ảnh sản phẩm-->
-                <div class="product-image">
-                        <img src="../img/Ảnh sản phẩm/oppo-a5-green.jpg" alt="oppo-a5-green">
-                </div>
-
-                <!--Thông tin đánh giá-->
-                <div class="product-rating">
-                    <span>
-                        <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i> 4.9
-                    </span>
-                    <span class="sold"> Đã bán 37.2k
-                    </span>
-                </div>
-
-                <!--Thông tin sản phẩm-->
-                <div class="product-info">
-                    <h5> OPPO A5 8GB/128GB</h5>
-                    <div class="specs">
-                        <span>8GB RAM</span>
-                        <span>128GB</span>
-                        <span>2.1 GHz</span>
-                    </div>
-                    <p class="price">6.390.000 VNĐ</p>
-                </div>
-                <!--Chức năng-->
-                <div class="product-action">
-                    <button class="buy-btn"><i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
-                    <a href="../Product-detail/oppo-a5-green.html" class="detail-link">Xem chi tiết</a>
-                </div>
-            </div>
-
-            <!--sản phẩm 16-->
-            <div class="product" data-brand="samsung">
-                <span class="product-badge">Mới</span>
-                <!--Hình ảnh sản phẩm-->
-                <div class="product-image">
-                        <img src="../img/Ảnh sản phẩm/samsung-galaxy-a57-violet.jpg" alt="samsung-galaxy-a57-violet">
-                </div>
-
-                <!--Thông tin đánh giá-->
-                <div class="product-rating">
-                    <span>
-                        <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i> 4.9
-                    </span>
-                    <span class="sold"> Đã bán 1.7k
-                    </span>
-                </div>
-
-                <!--Thông tin sản phẩm-->
-                <div class="product-info">
-                    <h5> Samsung Galaxy A57 5G 8GB/128GB</h5>
-                    <div class="specs">
-                        <span>8GB RAM</span>
-                        <span>128GB</span>
-                        <span>6.7"</span>
-                    </div>
-                    <p class="price">11.990.000 VNĐ</p>
-                </div>
-                <!--Chức năng-->
-                <div class="product-action">
-                    <button class="buy-btn"><i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
-                    <a href="../Product-detail/samsung-galaxy-a57-violet.html" class="detail-link">Xem chi tiết</a>
-                </div>
-            </div>
-
-          </div>
         </section>
-        
+
+        <!-- FEATURED PRODUCTS -->
+        <section class="section" id="san-pham">
+        <div class="container">
+            <div class="section-head">
+            <div>
+                <h2>Sản phẩm nổi bật</h2>
+                <p>Được khách hàng tin dùng và đánh giá cao nhất</p>
+            </div>
+            </div>
+
+            <div class="product-grid" id="productGrid"></div>
+            <section class="product-section">
+
+            <!--Danh sách sản phẩm-->
+            <div class="product-container">
+
+                <!--sản phẩm 1-->
+                <div class="product" data-brand="oppo">
+                <span class="product-badge">Mới</span>
+                <!--Hình ảnh sản phẩm-->
+                <div class="product-image">
+                    <img src="../img/Ảnh sản phẩm/oppo-a5i-pro.jpg" alt="oppo-a5i-pro">
+                </div>
+
+                <!--Thông tin đánh giá-->
+                <div class="product-rating">
+                    <span>
+                        <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i> 4.9
+                    </span>
+                    <span class="sold"> Đã bán 11.2k
+                    </span>
+                </div>
+
+                <!--Thông tin sản phẩm-->
+                <div class="product-info">
+                    <h5> OPPO A5i Pro 8GB/128GB</h5>
+                    <div class="specs">
+                        <span>8GB RAM</span>
+                        <span>128GB</span>
+                        <span>2.1 GHz</span>
+                    </div>
+                    <p class="price">6.290.000 VNĐ</p>
+                </div>
+                <!--Chức năng-->
+                <div class="product-action">
+                    <button class="buy-btn"><i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+                    <a href="../Product-detail/oppo-a5i-pro.html" class="detail-link">Xem chi tiết</a>
+                </div>
+                </div>
+
+                <!--sản phẩm 2-->
+                <div class="product" data-brand="iphone">
+                    <span class="product-badge">Hot</span>
+                    <!--Hình ảnh sản phẩm-->
+                    <div class="product-image">
+                        <img src="../img/Ảnh sản phẩm/iphone-13-den.jpg" alt="iphone-13-den">
+                    </div>
+
+                    <!--Thông tin đánh giá-->
+                    <div class="product-rating">
+                        <span>
+                            <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i> 4.9
+                        </span>
+                        <span class="sold"> Đã bán 270.7k
+                        </span>
+                    </div>
+
+                    <!--Thông tin sản phẩm-->
+                    <div class="product-info">
+                        <h5> iPhone 13 128GB</h5>
+                        <div class="specs">
+                            <span>4GB RAM</span>
+                            <span>128GB</span>
+                            <span>3.22 GHz</span>
+                        </div>
+                        <p class="price">11.990.000 VNĐ</p>
+                    </div>
+                    <!--Chức năng-->
+                    <div class="product-action">
+                        <button class="buy-btn"><i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ hàng
+                        </button>
+                        <a href="../Product-detail/iphone-13-den.html" class="detail-link">Xem chi tiết</a>
+                    </div>
+                </div>
+
+                <!--sản phẩm 10-->
+                <div class="product" data-brand="samsung">
+                    <span class="product-badge">Mới</span>
+                    <!--Hình ảnh sản phẩm-->
+                    <div class="product-image">
+                            <img src="../img/Ảnh sản phẩm/samsung-galaxy-z-fold7-black.jpg" alt="samsung-galaxy-z-fold7-black">
+                    </div>
+
+                    <!--Thông tin đánh giá-->
+                    <div class="product-rating">
+                        <span>
+                            <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i> 4.9
+                        </span>
+                        <span class="sold"> Đã bán 6.9k
+                        </span>
+                    </div>
+
+                    <!--Thông tin sản phẩm-->
+                    <div class="product-info">
+                        <h5> Samsung Galaxy Z Fold7 5G 12GB/256GB</h5>
+                        <div class="specs">
+                            <span>12GB RAM</span>
+                            <span>QXGA+</span>
+                            <span>4.47 GHz</span>
+                        </div>
+                        <p class="price">41.990.000 VNĐ</p>
+                    </div>
+                    <!--Chức năng-->
+                    <div class="product-action">
+                        <button class="buy-btn"><i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ hàng
+                        </button>
+                        <a href="../Product-detail/samsung-galaxy-z-fold7-black.html" class="detail-link">Xem chi tiết</a>
+                    </div>
+                </div>
+
+                <!--sản phẩm 11-->
+                <div class="product" data-brand="oppo">
+                    <span class="product-badge">New</span>
+                    <!--Hình ảnh sản phẩm-->
+                    <div class="product-image">
+                            <img src="../img/Ảnh sản phẩm/oppo-reno13-blue.jpg" alt="oppo-reno13-blue">
+                    </div>
+
+                    <!--Thông tin đánh giá-->
+                    <div class="product-rating">
+                        <span>
+                            <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i> 4.9
+                        </span>
+                        <span class="sold"> Đã bán 21.2k
+                        </span>
+                    </div>
+
+                    <!--Thông tin sản phẩm-->
+                    <div class="product-info">
+                        <h5> OPPO Reno13 5G 12GB/256GB</h5>
+                        <div class="specs">
+                            <span>12GB RAM</span>
+                            <span>256GB</span>
+                            <span>1.5K</span>
+                        </div>
+                        <p class="price">13.200.000 VNĐ</p>
+                    </div>
+                    <!--Chức năng-->
+                    <div class="product-action">
+                        <button class="buy-btn"><i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ hàng
+                        </button>
+                        <a href="../Product-detail/oppo-reno13-blue.html" class="detail-link">Xem chi tiết</a>
+                    </div>
+                </div>
+
+                <!--sản phẩm 12-->
+                <div class="product" data-brand="samsung">
+                    <span class="product-badge">New</span>
+                    <!--Hình ảnh sản phẩm-->
+                    <div class="product-image">
+                            <img src="../img/Ảnh sản phẩm/samsung-galaxy-s25-fe-blue.jpg" alt="samsung-galaxy-s25-fe-blue">
+                    </div>
+
+                    <!--Thông tin đánh giá-->
+                    <div class="product-rating">
+                        <span>
+                            <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i> 4.9
+                        </span>
+                        <span class="sold"> Đã bán 5.5k
+                        </span>
+                    </div>
+
+                    <!--Thông tin sản phẩm-->
+                    <div class="product-info">
+                        <h5> Samsung Galaxy S25 FE 5G 8GB/128GB</h5>
+                        <div class="specs">
+                            <span>8GB RAM</span>
+                            <span>128GB</span>
+                            <span>3.2 GHz</span>
+                        </div>
+                        <p class="price">13.590.000 VNĐ</p>
+                    </div>
+                    <!--Chức năng-->
+                    <div class="product-action">
+                        <button class="buy-btn"><i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ hàng
+                        </button>
+                        <a href="../Product-detail/samsung-galaxy-s25-fe-blue.html" class="detail-link">Xem chi tiết</a>
+                    </div>
+                </div>
+
+                <!--sản phẩm 13-->
+                <div class="product" data-brand="iphone">
+                    <span class="product-badge">Mới</span>
+                    <!--Hình ảnh sản phẩm-->
+                    <div class="product-image">
+                            <img src="../img/Ảnh sản phẩm/iphone-17e-pink.jpg" alt="iphone-17e-pink">
+                    </div>
+
+                    <!--Thông tin đánh giá-->
+                    <div class="product-rating">
+                        <span>
+                            <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i> 4.9
+                        </span>
+                        <span class="sold"> Đã bán 2.7k
+                        </span>
+                    </div>
+
+                    <!--Thông tin sản phẩm-->
+                    <div class="product-info">
+                        <h5> iPhone 17e 256GB</h5>
+                        <div class="specs">
+                            <span>Super Retina XDR</span>
+                            <span>256GB</span>
+                            <span>6.1"</span>
+                        </div>
+                        <p class="price">17.590.000 VNĐ</p>
+                    </div>
+                    <!--Chức năng-->
+                    <div class="product-action">
+                        <button class="buy-btn"><i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ hàng
+                        </button>
+                        <a href="../Product-detail/iphone-17e-pink.html" class="detail-link">Xem chi tiết</a>
+                    </div>
+                </div>
+
+                <!--sản phẩm 14-->
+                <div class="product" data-brand="iphone">
+                    <span class="product-badge">Hot</span>
+                    <!--Hình ảnh sản phẩm-->
+                    <div class="product-image">
+                            <img src="../img/Ảnh sản phẩm/iphone-16-plus-xanh-luu-ly.jpg" alt="iphone-16-plus-xanh-luu-ly">
+                    </div>
+
+                    <!--Thông tin đánh giá-->
+                    <div class="product-rating">
+                        <span>
+                            <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i> 4.9
+                        </span>
+                        <span class="sold"> Đã bán 26.9k
+                        </span>
+                    </div>
+
+                    <!--Thông tin sản phẩm-->
+                    <div class="product-info">
+                        <h5> iPhone 16 Plus 128GB</h5>
+                        <div class="specs">
+                            <span>8GB RAM</span>
+                            <span>128GB</span>
+                            <span>2.1 GHz</span>
+                        </div>
+                        <p class="price">23.990.000 VNĐ</p>
+                    </div>
+                    <!--Chức năng-->
+                    <div class="product-action">
+                        <button class="buy-btn"><i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ hàng
+                        </button>
+                        <a href="../Product-detail/iphone-16-plus-xanh-luu-ly.html" class="detail-link">Xem chi tiết</a>
+                    </div>
+                </div>
+
+                <!--sản phẩm 15-->
+                <div class="product" data-brand="oppo">
+                    <span class="product-badge">Hot</span>
+                    <!--Hình ảnh sản phẩm-->
+                    <div class="product-image">
+                            <img src="../img/Ảnh sản phẩm/oppo-a5-green.jpg" alt="oppo-a5-green">
+                    </div>
+
+                    <!--Thông tin đánh giá-->
+                    <div class="product-rating">
+                        <span>
+                            <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i> 4.9
+                        </span>
+                        <span class="sold"> Đã bán 37.2k
+                        </span>
+                    </div>
+
+                    <!--Thông tin sản phẩm-->
+                    <div class="product-info">
+                        <h5> OPPO A5 8GB/128GB</h5>
+                        <div class="specs">
+                            <span>8GB RAM</span>
+                            <span>128GB</span>
+                            <span>2.1 GHz</span>
+                        </div>
+                        <p class="price">6.390.000 VNĐ</p>
+                    </div>
+                    <!--Chức năng-->
+                    <div class="product-action">
+                        <button class="buy-btn"><i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ hàng
+                        </button>
+                        <a href="../Product-detail/oppo-a5-green.html" class="detail-link">Xem chi tiết</a>
+                    </div>
+                </div>
+
+                <!--sản phẩm 16-->
+                <div class="product" data-brand="samsung">
+                    <span class="product-badge">Mới</span>
+                    <!--Hình ảnh sản phẩm-->
+                    <div class="product-image">
+                            <img src="../img/Ảnh sản phẩm/samsung-galaxy-a57-violet.jpg" alt="samsung-galaxy-a57-violet">
+                    </div>
+
+                    <!--Thông tin đánh giá-->
+                    <div class="product-rating">
+                        <span>
+                            <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i> 4.9
+                        </span>
+                        <span class="sold"> Đã bán 1.7k
+                        </span>
+                    </div>
+
+                    <!--Thông tin sản phẩm-->
+                    <div class="product-info">
+                        <h5> Samsung Galaxy A57 5G 8GB/128GB</h5>
+                        <div class="specs">
+                            <span>8GB RAM</span>
+                            <span>128GB</span>
+                            <span>6.7"</span>
+                        </div>
+                        <p class="price">11.990.000 VNĐ</p>
+                    </div>
+                    <!--Chức năng-->
+                    <div class="product-action">
+                        <button class="buy-btn"><i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ hàng
+                        </button>
+                        <a href="../Product-detail/samsung-galaxy-a57-violet.html" class="detail-link">Xem chi tiết</a>
+                    </div>
+                </div>
+
+            </div>
+            </section>
+            
 
 
-        <div class="load-more-wrap">
-          <button class="btn-outline">Xem thêm sản phẩm →</button>
+            <div class="load-more-wrap">
+            <a href="../Product/Product.html" class="btn-outline">Xem thêm sản phẩm</a>
+            </div>
+
         </div>
+        </section>
 
-      </div>
-    </section>
-
-</main>
-
-<footer id="footer"></footer>
+    </main>
+    <footer>
+    <div class="footer-inner">
+        <div>
+        <h3>Cửa hàng của chúng tôi</h3>
+        <address>
+            <strong>DePhone</strong><br>
+            Đường 3 Tháng 2, Thành phố Cần Thơ, Việt Nam<br>
+            Đường Mậu Thân, Thành phố Cần Thơ, Việt Nam<br>
+        </address>
+        </div>
+        <div>
+        <h3>Liên hệ</h3>
+        <p class="footer-contact">
+            Số điện thoại: <a href="tel:+842839991234">+84 28 3999 1234</a><br>
+            Email: <a href="mailto:hello@dephone.vn">dephone@gmail.com</a><br>
+            Giờ mở cửa, 9:00 — 21:00
+        </p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026 DePhone.</span>
+        <span>All rights reserved.</span>
+    </div>
+    </footer>
 <script src="../Auth/authentication.js"></script>
 <script src="../cart-service.js"></script>
 <script src="home.js"></script>

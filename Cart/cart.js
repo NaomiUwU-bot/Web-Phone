@@ -14,6 +14,7 @@ if (!isLogin()){
 		const users = JSON.parse(localStorage.getItem('users')) || [];
 		users[currentUser.id] = currentUser;
 		localStorage.setItem('users', JSON.stringify(users));
+		updateCartCount();
 	}
 	let cart =[];
 	// lấy các element từ html về cho dễ dùng

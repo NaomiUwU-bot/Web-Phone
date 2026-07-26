@@ -26,8 +26,6 @@ if (!isLogin()){
 	const selectAllCheckboxEl = document.getElementById('select-all-checkbox');
 	const deleteAllBtnEl = document.getElementById('delete-all-btn');
 	const cartActionsEl = document.getElementById('cart-actions');
-	const btnIncrease = document.getElementsByClassName('btn-increase');
-	const btnDecrease = document.getElementsByClassName('btn-deacrease');
 
 
 	//Hiển thị các sản phẩm trong giỏ hàng và định nghĩa các hàm (tăng, giảm, xóa, check)

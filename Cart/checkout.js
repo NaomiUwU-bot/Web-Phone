@@ -1,4 +1,4 @@
-//xác thực
+//Xác thực xem đã đăng nhập hay chưa
 if (!isLogin()){
     window.alert('Bạn chưa đăng nhập. Hãy đăng nhập để sử dụng chức năng này');
     window.location.href = "../Auth/LI.html";
@@ -13,33 +13,11 @@ if (!isLogin()){
 
     localStorage.setItem('state','info');
 
+    //Hàm thực hiện render các sản phẩm đã được chọn trong giỏ hàng vào phần checkout
     function renderProducts(){
         selectedProducts.forEach((product,index) =>{
             const productDiv = document.createElement('div');
             productDiv.className ="cart-item";
-            // productDiv.innerHTML = `
-            //     <div class="cart-item">
-            //         <div class="cart-item__img-wrap">
-            //             <img src=${product.img_src} alt=${product.name} class="cart-item__img">
-            //         </div>
-
-            //         <div class="cart-item__info">
-            //             <div class="cart-item__header">
-            //                 <h3 class="cart-item__name">${product.name}</h3>
-            //             </div>
-            //             <div class="cart-item__price-row">
-            //                 <div class="cart-item__prices">
-            //                     <span class="cart-item__price-current">${product.price}₫</span>
-            //                     <span class="cart-item__price-old">${product.price}₫</span>
-            //                 </div>
-                            
-            //                 <div class="cart-item__quantity">
-            //                     <span>Số lượng: ${product.quantity}</span>
-            //                 </div>
-            //             </div>
-            //             </div>
-            //     </div>
-            // `;
 
             const img = document.createElement('img');
             img.src = product.image;
@@ -92,7 +70,7 @@ if (!isLogin()){
         });
     });
 
-
+    //Nút quay về
     backBtnEl.addEventListener('click', function(){
         localStorage.setItem('state', 'info');
         backBtnEl.classList.add('hidden');
@@ -101,6 +79,7 @@ if (!isLogin()){
         confirmBtnEl.innerText = 'Tiếp tục';
     });
 
+    //Nút tiếp tục
     confirmBtnEl.addEventListener('click', function(){
         if (localStorage.getItem('state') === 'info') {
             localStorage.setItem('state', 'payment');
@@ -121,7 +100,7 @@ if (!isLogin()){
         }
     });
 
-
+    //render phần summary của checkout, in ra tổng tiền phải trả (đã tính VAT 10%)
     let total = 0;
     selectedProducts.forEach(product => {
         total += product.price * product.quantity;
@@ -136,21 +115,11 @@ if (!isLogin()){
     checkoutSummaryTotalEl.appendChild(vatEl);
     checkoutSummaryEl.prepend(checkoutSummaryTotalEl);
 
-    // checkoutSummaryTotalEl.innerHTML = `Tổng tiền: ${Math.ceil(total * 1.1).toLocaleString()}₫<span>(đã bao gồm VAT và làm tròn)</span>`;
-
-
     renderProducts();
-
-    // Them Header va Footer
-    fetch("../Components/Header.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("header").innerHTML = data;
-        });
-
-    fetch("../Components/Footer.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("footer").innerHTML = data;
-        });
 }
+
+//Render phần thông tin người dùng (địa chỉ tự nhập)
+const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+document.getElementById('customer-name').value = currentUser.fullname;
+document.getElementById('customer-phone').value = currentUser.phone;
+document.getElementById('customer-email').value = currentUser.email;

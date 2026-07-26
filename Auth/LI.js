@@ -145,10 +145,3 @@ function logout(){
     window.location.href = "LI.html";
 }
 
-
-
-fetch("../Components/Footer.html")
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById("footer").innerHTML = data;
-    });

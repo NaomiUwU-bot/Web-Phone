@@ -1,10 +1,3 @@
-// Them Header va Footer
-
-fetch("../Components/Footer.html")
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById("footer").innerHTML = data;
-    });
 
 
 function filterProducts() {
@@ -56,18 +49,17 @@ filterProducts();//gọi hàm
 
 filterProducts();
 
-const productContainerEl = document.getElementsByClassName('product-section')[0];
 
-//Bắt sự kiện click vào nút thêm vào giỏ hàng để lấy id và thêm nó vào local storage
+const productContainerEl = document.getElementsByClassName('product-container')[0];
+//Bắt sự kiện click vào nút thêm vào giỏ hàng để lấy thông tin và thêm nó vào localStorage
 productContainerEl.addEventListener('click', function(e){
     if (e.target.classList.contains('buy-btn')){
         if (isLogin()){
             const productEl = e.target.parentElement.parentElement;
-            let productChilds = productEl.children;
-            let productImage = productChilds[1].firstElementChild.src;
-            let productName = productChilds[3].firstElementChild.innerText;
+            let productImage = productEl.querySelector('img').src;
+            let productName = productEl.querySelector('h5').innerText;
             let productQuantity =1;
-            let productPrice = productChilds[3].lastElementChild.innerText;
+            let productPrice = productEl.querySelector('.price').innerText;
             productPrice = parseInt(productPrice.replace(/\D/g, ""), 10);
             let newProduct = {
                 name: productName,
@@ -77,6 +69,7 @@ productContainerEl.addEventListener('click', function(e){
                 checked: false 
             };
             addToCart(newProduct);
+            updateCartCount();
         }
         else{
             window.alert('Bạn chưa đăng nhập. Hãy đăng nhập để sử dụng chức năng này');

@@ -22,7 +22,7 @@ document.querySelectorAll('.wish-btn').forEach(btn => {
 
 
 const productContainerEl = document.getElementsByClassName('product-section')[0];
-//Bắt sự kiện click vào nút thêm vào giỏ hàng để lấy id và thêm nó vào local storage
+//Bắt sự kiện click vào nút thêm vào giỏ hàng để lấy thông tin và thêm nó vào localStorage
 productContainerEl.addEventListener('click', function(e){
   if (e.target.classList.contains('buy-btn')){
     if(isLogin()){
@@ -47,15 +47,3 @@ productContainerEl.addEventListener('click', function(e){
   }
 });
 
-// Them Header va Footer
-fetch("../Components/Header.html")
-.then(response => response.text())
-.then(data => {
-    document.getElementById("header").innerHTML = data;
-});
-
-fetch("../Components/Footer.html")
-.then(response => response.text())
-.then(data => {
-    document.getElementById("footer").innerHTML = data;
-});

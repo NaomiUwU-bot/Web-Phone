@@ -16,7 +16,7 @@ if (!isLogin()){
 		localStorage.setItem('users', JSON.stringify(users));
 		updateCartCount();
 	}
-	let cart =[];
+
 	// lấy các element từ html về cho dễ dùng
 	const productListEl = document.getElementById('product-list');
 	const cartTotalEl = document.getElementById('cart-summary__total');
@@ -99,7 +99,6 @@ if (!isLogin()){
 				productDiv.appendChild(deleteBtn);
 
 				const checkBoxEl = productDiv.querySelector('.cart-item__checkbox');
-				const qtyInputEl = productDiv.querySelector('.cart-item__qty-input');
 				const btnIncreaseEl = productDiv.querySelector('.btn-increase');
 				const btnDecreaseEl = productDiv.querySelector('.btn-decrease');
 				const btnDeleteEl = productDiv.querySelector('.cart-item__delete-btn');
@@ -195,21 +194,7 @@ if (!isLogin()){
 	        cartTotalEl.innerText = `Tạm tính: ${totalAmount.toLocaleString()}₫`;
 	    }
 	}
-
-
 	renderProducts()
 	updateCartUI()
 
-	// Them Header va Footer
-	fetch("../Components/Header.html")
-	    .then(response => response.text())
-	    .then(data => {
-	        document.getElementById("header").innerHTML = data;
-	    });
-
-	fetch("../Components/Footer.html")
-	    .then(response => response.text())
-	    .then(data => {
-	        document.getElementById("footer").innerHTML = data;
-	    });
 }

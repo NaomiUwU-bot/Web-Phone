@@ -41,7 +41,8 @@ function showCurrentUser(){
 function logout(){
 
     localStorage.removeItem("isLogin");
-
+    localStorage.removeItem('state');
+    localStorage.removeItem('selectedProducts');
     localStorage.removeItem("currentUser");
 
     location.reload();

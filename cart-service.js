@@ -14,4 +14,5 @@ function addToCart(newProduct){
   const users = JSON.parse(localStorage.getItem('users')) || [];
   users[currentUser.id] = currentUser;
   localStorage.setItem('users', JSON.stringify(users));
+  updateCartCount();
 }

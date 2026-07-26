@@ -187,6 +187,7 @@ function signup(){
             localStorage.setItem("users", JSON.stringify(users));
             alert("Đăng ký thành công!");
             form.reset();
+            window.location.href = "LI.html"
         }
     });   
 }
@@ -200,8 +201,3 @@ signup();
 // Them Header va Footer
 
 
-fetch("../Components/Footer.html")
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById("footer").innerHTML = data;
-    });

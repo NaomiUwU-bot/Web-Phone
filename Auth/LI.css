@@ -37,25 +37,6 @@ body{
     max-width: 520px;
 }
 
-/* .logo{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 45px;
-    margin-top: -100px;
-}
-
-.logo i{
-    font-size: 38px;
-    color: var(--button-color);
-}
-
-.logo span{
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--text-color);
-} */
-
 .banner-phải{
     width: 100%;
     margin-bottom: 40px;

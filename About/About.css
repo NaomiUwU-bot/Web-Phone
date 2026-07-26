@@ -17,7 +17,9 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: "Inter", sans-serif;
-  -webkit-font-smoothing: antialiased;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
 }
 
 a { color: inherit; text-decoration: none; }
@@ -26,7 +28,8 @@ a { color: inherit; text-decoration: none; }
 main { 
   max-width: 1300px;
   margin: 0 auto;
-  padding: 0 32px; 
+  padding: 0 32px;
+  flex: 1;
 }
 
 .eyebrow {
@@ -145,16 +148,27 @@ h1 em {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 860px) {
-  .hero-grid, .story-grid, .footer-inner { grid-template-columns: 1fr; }
-  .story-grid h2 { position: static; }
-  .stats-row { grid-template-columns: 1fr; gap: 24px; }
-  nav ul { display: none; }
-  .menu-toggle { display: flex; }
-  /* .nav-cta { display: none; } */
+  .hero-grid, .story-grid, .footer-inner { 
+    grid-template-columns: 1fr; 
+  }
+
+  .story-grid h2 { 
+    position: static; 
+  }
+
+  .stats-row { 
+    grid-template-columns: 1fr; 
+    gap: 24px; 
+  }
+
+  nav ul { 
+    display: none; 
+  }
+
+  .menu-toggle { 
+    display: flex; 
+  }
+
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .nav-cta, nav a { transition: none; }
-}
 

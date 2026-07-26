@@ -22,7 +22,7 @@ footer {
 }
 
 .footer-inner {
-  max-width: 1180px;
+  /* max-width: 1180px; */
   margin: 0 auto;
   padding: 64px 32px 32px;
   display: grid;
@@ -55,7 +55,6 @@ address strong { color: var(--ink); }
 
 .footer-bottom {
   border-top: 1px solid var(--line);
-  max-width: 1180px;
   margin: 0 auto;
   padding: 20px 32px 28px;
   display: flex;

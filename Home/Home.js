@@ -1,25 +1,3 @@
-// Lọc sản phẩm theo thương hiệu
-const tabs = document.querySelectorAll('#filterTabs button');
-const cards = document.querySelectorAll('#productGrid .product-card');
-tabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    tabs.forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
-    const filter = tab.dataset.filter;
-    cards.forEach(card => {
-      card.style.display = (filter === 'all' || card.dataset.brand === filter) ? 'flex' : 'none';
-    });
-  });
-});
-
-// Toggle yêu thích
-document.querySelectorAll('.wish-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    btn.classList.toggle('active');
-    btn.textContent = btn.classList.contains('active') ? '♥' : '♡';
-  });
-});
-
 
 const productContainerEl = document.getElementsByClassName('product-section')[0];
 //Bắt sự kiện click vào nút thêm vào giỏ hàng để lấy thông tin và thêm nó vào localStorage

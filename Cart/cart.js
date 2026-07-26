@@ -1,5 +1,5 @@
 //Xác thực xem đã đăng nhập hay chưa
-if (!isLogin()){
+if (JSON.parse(localStorage.getItem('isLogin'))==null){
 	window.alert('Bạn chưa đăng nhập. Hãy đăng nhập để sử dụng chức năng này');
 	window.location.href = "../Auth/Li.html";
 }else{

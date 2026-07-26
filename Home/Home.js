@@ -3,7 +3,7 @@ const productContainerEl = document.getElementsByClassName('product-section')[0]
 //Bắt sự kiện click vào nút thêm vào giỏ hàng để lấy thông tin và thêm nó vào localStorage
 productContainerEl.addEventListener('click', function(e){
   if (e.target.classList.contains('buy-btn')){
-    if(isLogin()){
+    if(JSON.parse(localStorage.getItem('isLogin'))!=null){
       const productEl = e.target.parentElement.parentElement;
       let productImage = productEl.querySelector('img').src;
       let productName = productEl.querySelector('h5').innerText;

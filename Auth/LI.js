@@ -111,7 +111,7 @@ function login(){
             if (validUser){
                 let user = validUser;
                 user.id = users.indexOf(validUser);
-                loadUser(user);
+
                 window.alert('Đăng nhập thành công');
 
                 // Lưu trạng thái đăng nhập

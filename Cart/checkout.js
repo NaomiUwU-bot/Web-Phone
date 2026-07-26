@@ -1,8 +1,8 @@
 //Xác thực xem đã đăng nhập hay chưa
-if (!isLogin()){
+if (JSON.parse(localStorage.getItem('isLogin'))==null){
     window.alert('Bạn chưa đăng nhập. Hãy đăng nhập để sử dụng chức năng này');
     window.location.href = "../Auth/LI.html";
-} else{
+}else{
     const selectedProducts = JSON.parse(localStorage.getItem('selectedProducts')) || [];
     const checkoutProductsListEl = document.getElementById('checkout-products__list');
     const infoTabEl = document.getElementById('info-tab');
@@ -15,7 +15,7 @@ if (!isLogin()){
 
     //Hàm thực hiện render các sản phẩm đã được chọn trong giỏ hàng vào phần checkout
     function renderProducts(){
-        selectedProducts.forEach((product,index) =>{
+        selectedProducts.forEach((product) =>{
             const productDiv = document.createElement('div');
             productDiv.className ="cart-item";
 

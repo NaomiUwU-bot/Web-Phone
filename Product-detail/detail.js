@@ -48,16 +48,13 @@ colorButtons.forEach(button => {
     });
 });
 
-function isLogin(){
-    return localStorage.getItem('currentUser') != {};
-}
 const productContainerEl = document.getElementsByClassName('product-detail')[0];
 
 //Bắt sự kiện click vào nút thêm vào giỏ hàng để lấy thông tin và thêm nó vào localStorage
 productContainerEl.addEventListener('click', function(e){
     //Ấn nút mua ngay
     if (e.target.id == "buyNow"){
-        if (isLogin()){
+        if (JSON.parse(localStorage.getItem('isLogin'))!=null){
             let productImage = productContainerEl.querySelector('#mainImage').src;
             let productName = productContainerEl.querySelector('#productName').innerText;
             let productQuantity =1;
@@ -79,7 +76,7 @@ productContainerEl.addEventListener('click', function(e){
     }
     //Ấn nút thêm vào giỏ hàng
     else if (e.target.id == "addCart"){
-        if (isLogin()){
+        if (JSON.parse(localStorage.getItem('isLogin'))!=null){
             let productImage = productContainerEl.querySelector('#mainImage').src;
             let productName = productContainerEl.querySelector('#productName').innerText;
             let productQuantity =1;

@@ -53,8 +53,6 @@ address strong { color: var(--ink); }
   color: var(--steel);
 }
 
-.footer-contact a:hover { color: var(--accent); }
-
 .footer-bottom {
   border-top: 1px solid var(--line);
   max-width: 1180px;

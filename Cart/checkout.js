@@ -80,13 +80,21 @@ if (!isLogin()){
     });
 
     //Nút tiếp tục
-    confirmBtnEl.addEventListener('click', function(){
+    confirmBtnEl.addEventListener('click', function(e){
         if (localStorage.getItem('state') === 'info') {
-            localStorage.setItem('state', 'payment');
-            infoTabEl.classList.add('hidden');
-            paymentTabEl.classList.remove('hidden');
-            backBtnEl.classList.remove('hidden');
-            confirmBtnEl.innerText = 'Mua ngay';
+            const address = document.getElementById('customer-address').value.trim();
+            if(address===""){
+                e.preventDefault();
+                const error = document.getElementsByClassName('error');
+                error[0].innerText = "**Vui lòng nhập vào địa chỉ để tiếp tục**";
+            }else{
+                localStorage.setItem('state', 'payment');
+                infoTabEl.classList.add('hidden');
+                paymentTabEl.classList.remove('hidden');
+                backBtnEl.classList.remove('hidden');
+                confirmBtnEl.innerText = 'Mua ngay';
+            }
+            
         }else{
             if(storeSelectEl.value=="" && method == 'at-store'){
                 window.alert('Vui lòng chọn cửa hàng nhận sản phẩm');

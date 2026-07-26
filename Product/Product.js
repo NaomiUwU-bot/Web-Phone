@@ -11,18 +11,25 @@ fetch("../Components/Footer.html")
         document.getElementById("footer").innerHTML = data;
     });
 
+
 function filterProducts() {
-    // Lấy tất cả menu hãng
+    // Lấy tất cả danh sách hãng
     const menuItems = document.querySelectorAll(".category-menu a");
 
     // Lấy tất cả sản phẩm
     const products = document.querySelectorAll(".product");
+    // duyệt từng danh sách
     menuItems.forEach(function (item) {
+        // thêm sự kiện click
         item.addEventListener("click", function (e) {
+            // ngăn chuyển trang
             e.preventDefault();
+            // đi qua toàn bộ ds
             menuItems.forEach(function (link) {
+                //xoá active cũ
                 link.classList.remove("active");
             });
+            //thêm active mới
             this.classList.add("active");
 
             // Lấy hãng được chọn
@@ -30,13 +37,18 @@ function filterProducts() {
 
             // Duyệt từng sản phẩm
             products.forEach(function (product) {
+                // nếu chọn Tất cả
                 if (brand === "all") {
+                    // hiển thị kq sản phẩm
                     product.style.display = "flex";
                 }
+                
                 else if (product.dataset.brand === brand) {
+                    //hiện sp-đúng hãng chọn
                     product.style.display = "flex";
                 }
                 else {
+                    // ẩn sp-sai hãng chọn
                     product.style.display = "none";
                 }
             });
@@ -44,6 +56,9 @@ function filterProducts() {
 
     });
 }
+
+filterProducts();//gọi hàm
+
 filterProducts();
 
 const productContainerEl = document.getElementsByClassName('product-section')[0];
@@ -74,3 +89,4 @@ productContainerEl.addEventListener('click', function(e){
         }
     }
 });
+

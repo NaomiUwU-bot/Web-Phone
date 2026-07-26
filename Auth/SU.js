@@ -148,10 +148,6 @@ function signup(){
             isValid = false;
         }
 
-
-        
-
-
         /// MẬT KHẨU
         if(password.value.trim() === ""){
             errors[4].textContent = "Vui lòng nhập mật khẩu.";

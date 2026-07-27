@@ -47,8 +47,6 @@ function filterProducts() {
 
 filterProducts();//gọi hàm
 
-filterProducts();
-
 
 const productContainerEl = document.getElementsByClassName('product-container')[0];
 //Bắt sự kiện click vào nút thêm vào giỏ hàng để lấy thông tin và thêm nó vào localStorage

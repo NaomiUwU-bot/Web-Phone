@@ -37,8 +37,10 @@ if (JSON.parse(localStorage.getItem('isLogin'))==null){
 			cartActionsEl.style.display = 'none';
 		}
 		else{
-			cartSummaryEl.style.display = 'flex';
+			blankCartEl.style.display='none';
 			products.forEach((product, index)=>{
+
+				//tạo ra các element cho product card
 				const productDiv = document.createElement('div');
 				productDiv.classList.add('cart-item');
 
@@ -93,6 +95,7 @@ if (JSON.parse(localStorage.getItem('isLogin'))==null){
 				productDiv.appendChild(quantityDiv);
 				productDiv.appendChild(deleteBtn);
 
+				//lấy các nút để thêm sự kiện
 				const checkBoxEl = productDiv.querySelector('.cart-item__checkbox');
 				const btnIncreaseEl = productDiv.querySelector('.btn-increase');
 				const btnDecreaseEl = productDiv.querySelector('.btn-decrease');
@@ -133,6 +136,7 @@ if (JSON.parse(localStorage.getItem('isLogin'))==null){
 					updateCartUI();
 				});
 
+				//thêm sản phẩm vào product list
 				productListEl.appendChild(productDiv);	
 			});
 		}

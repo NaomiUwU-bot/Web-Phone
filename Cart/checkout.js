@@ -93,6 +93,8 @@ if (JSON.parse(localStorage.getItem('isLogin'))==null){
                 const error = document.getElementsByClassName('error');
                 error[0].innerText = "**Vui lòng nhập vào địa chỉ để tiếp tục**";
             }else{
+                const error = document.getElementsByClassName('error');
+                error[0].innerText = "";
                 localStorage.setItem('state', 'payment');
                 infoTabEl.classList.add('hidden');
                 paymentTabEl.classList.remove('hidden');

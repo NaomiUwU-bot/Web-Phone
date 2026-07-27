@@ -1,3 +1,5 @@
+// Lê Ngọc Diễm Phương	B2407546
+
 const mainImage = document.getElementById("mainImage");
 const thumbnails = document.querySelectorAll(".thumbnail-list img");
 

@@ -1,4 +1,4 @@
-
+// Lê Ngọc Diễm Phương	B2407546
 
 function filterProducts() {
     // Lấy tất cả danh sách hãng

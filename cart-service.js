@@ -1,3 +1,5 @@
+
+
 function addToCart(newProduct){
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
   let existIndex = currentUser.inCartProducts.findIndex(product=> product.name === newProduct.name);

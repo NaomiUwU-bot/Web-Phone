@@ -1,3 +1,4 @@
+// Hồ Phạm Hữu Bình B2408778
 
 const productContainerEl = document.getElementsByClassName('product-section')[0];
 //Bắt sự kiện click vào nút thêm vào giỏ hàng để lấy thông tin và thêm nó vào localStorage

@@ -1,3 +1,5 @@
+// Nguyễn Trọng Vỹ	B2404890
+
 ///LẤY CÁC PHẦN TỬ TỪ HTML///
 // Lấy thẻ form
 const form = document.querySelector("form");

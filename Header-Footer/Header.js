@@ -1,3 +1,5 @@
+// Lương Hoàng Thông B2408886
+
 function initMenu(){
 
     const menuToggle=document.querySelector(".menu-toggle");

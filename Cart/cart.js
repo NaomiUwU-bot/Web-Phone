@@ -30,6 +30,7 @@ if (JSON.parse(localStorage.getItem('isLogin'))==null){
 
 	//Hiển thị các sản phẩm trong giỏ hàng và định nghĩa các hàm (tăng, giảm, xóa, check)
 	function renderProducts(){
+		productListEl.textContent = "";
 		if (products.length === 0){
 			blankCartEl.innerText = "Giỏ hàng của bạn đang trống";
 			cartSummaryEl.style.display = 'none';
@@ -37,7 +38,6 @@ if (JSON.parse(localStorage.getItem('isLogin'))==null){
 		}
 		else{
 			cartSummaryEl.style.display = 'flex';
-		
 			products.forEach((product, index)=>{
 				const productDiv = document.createElement('div');
 				productDiv.classList.add('cart-item');
@@ -133,7 +133,7 @@ if (JSON.parse(localStorage.getItem('isLogin'))==null){
 					updateCartUI();
 				});
 
-				productListEl.appendChild(productDiv);		
+				productListEl.appendChild(productDiv);	
 			});
 		}
 		

@@ -26,15 +26,12 @@ if (JSON.parse(localStorage.getItem('isLogin'))==null){
 	const selectAllCheckboxEl = document.getElementById('select-all-checkbox');
 	const deleteAllBtnEl = document.getElementById('delete-all-btn');
 	const cartActionsEl = document.getElementById('cart-actions');
-
+	const blankCartEl = document.getElementById('blank-cart');
 
 	//Hiển thị các sản phẩm trong giỏ hàng và định nghĩa các hàm (tăng, giảm, xóa, check)
 	function renderProducts(){
-		productListEl.innerHTML = ''
 		if (products.length === 0){
-			productListEl.innerHTML = `
-				<h1 style ="text-align: center;"> Giỏ hàng của bạn đang trống</h1>
-			`
+			blankCartEl.innerText = "Giỏ hàng của bạn đang trống";
 			cartSummaryEl.style.display = 'none';
 			cartActionsEl.style.display = 'none';
 		}

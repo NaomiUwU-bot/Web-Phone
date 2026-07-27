@@ -26,22 +26,21 @@ if (JSON.parse(localStorage.getItem('isLogin'))==null){
 	const selectAllCheckboxEl = document.getElementById('select-all-checkbox');
 	const deleteAllBtnEl = document.getElementById('delete-all-btn');
 	const cartActionsEl = document.getElementById('cart-actions');
-
+	const blankCartEl = document.getElementById('blank-cart');
 
 	//Hiển thị các sản phẩm trong giỏ hàng và định nghĩa các hàm (tăng, giảm, xóa, check)
 	function renderProducts(){
-		productListEl.innerHTML = ''
+		productListEl.textContent = "";
 		if (products.length === 0){
-			productListEl.innerHTML = `
-				<h1 style ="text-align: center;"> Giỏ hàng của bạn đang trống</h1>
-			`
+			blankCartEl.innerText = "Giỏ hàng của bạn đang trống";
 			cartSummaryEl.style.display = 'none';
 			cartActionsEl.style.display = 'none';
 		}
 		else{
-			cartSummaryEl.style.display = 'flex';
-		
+			blankCartEl.style.display='none';
 			products.forEach((product, index)=>{
+
+				//tạo ra các element cho product card
 				const productDiv = document.createElement('div');
 				productDiv.classList.add('cart-item');
 
@@ -96,6 +95,7 @@ if (JSON.parse(localStorage.getItem('isLogin'))==null){
 				productDiv.appendChild(quantityDiv);
 				productDiv.appendChild(deleteBtn);
 
+				//lấy các nút để thêm sự kiện
 				const checkBoxEl = productDiv.querySelector('.cart-item__checkbox');
 				const btnIncreaseEl = productDiv.querySelector('.btn-increase');
 				const btnDecreaseEl = productDiv.querySelector('.btn-decrease');
@@ -136,7 +136,8 @@ if (JSON.parse(localStorage.getItem('isLogin'))==null){
 					updateCartUI();
 				});
 
-				productListEl.appendChild(productDiv);		
+				//thêm sản phẩm vào product list
+				productListEl.appendChild(productDiv);	
 			});
 		}
 		

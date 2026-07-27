@@ -1,3 +1,5 @@
+
+
 //Xác thực xem đã đăng nhập hay chưa
 if (JSON.parse(localStorage.getItem('isLogin'))==null){
     window.alert('Bạn chưa đăng nhập. Hãy đăng nhập để sử dụng chức năng này');
@@ -16,6 +18,8 @@ if (JSON.parse(localStorage.getItem('isLogin'))==null){
     //Hàm thực hiện render các sản phẩm đã được chọn trong giỏ hàng vào phần checkout
     function renderProducts(){
         selectedProducts.forEach((product) =>{
+
+            //tạo ra các thành phần cho product card
             const productDiv = document.createElement('div');
             productDiv.className ="cart-item";
 
@@ -45,17 +49,17 @@ if (JSON.parse(localStorage.getItem('isLogin'))==null){
             productDiv.appendChild(priceDiv);
             productDiv.appendChild(totalPriceDiv);
             
-
-
+            //thêm thẻ vào danh sách để hiển thị lên màn hình
             checkoutProductsListEl.appendChild(productDiv);		
         });
     }
 
-    //bắt sự kiện thay đổi phương thức thanh toán
     const paymentRadioEls = document.querySelectorAll('input[name="payment-method"]');
     const qrCodeContainerEl = document.getElementById('qr-code-container');
     const storesContainerEl = document.getElementById('store-select-container')
     let method ='at-store';
+    
+    //bắt sự kiện thay đổi phương thức thanh toán
     paymentRadioEls.forEach(radio=>{
         radio.addEventListener('change', function(e){
             if (e.target.value === 'qr' && e.target.checked) {
@@ -70,7 +74,7 @@ if (JSON.parse(localStorage.getItem('isLogin'))==null){
         });
     });
 
-    //Nút quay về
+    //Nút quay về nếu đang ở bước thanh toán
     backBtnEl.addEventListener('click', function(){
         localStorage.setItem('state', 'info');
         backBtnEl.classList.add('hidden');
@@ -81,9 +85,10 @@ if (JSON.parse(localStorage.getItem('isLogin'))==null){
 
     //Nút tiếp tục
     confirmBtnEl.addEventListener('click', function(e){
+        //Nếu đang ở bước hiện thông tin -> chuyển qua bước thanh toán
         if (localStorage.getItem('state') === 'info') {
             const address = document.getElementById('customer-address').value.trim();
-            if(address===""){
+            if(address===""){ //Người dùng phải nhập địa chỉ thì mới tiếp tục được
                 e.preventDefault();
                 const error = document.getElementsByClassName('error');
                 error[0].innerText = "**Vui lòng nhập vào địa chỉ để tiếp tục**";
@@ -95,8 +100,8 @@ if (JSON.parse(localStorage.getItem('isLogin'))==null){
                 confirmBtnEl.innerText = 'Mua ngay';
             }
             
-        }else{
-            if(storeSelectEl.value=="" && method == 'at-store'){
+        }else{ //Nếu đang ở trang thanh toán -> mua hàng thành công 
+            if(storeSelectEl.value=="" && method == 'at-store'){ //nếu chưa chọn cửa hàng nhận thì phải chọn để mua hàng
                 window.alert('Vui lòng chọn cửa hàng nhận sản phẩm');
             }else{
                 localStorage.setItem('state', 'done');
@@ -109,12 +114,11 @@ if (JSON.parse(localStorage.getItem('isLogin'))==null){
         }
     });
 
-    //render phần summary của checkout, in ra tổng tiền phải trả (đã tính VAT 10%)
+    //render phần summary của checkout, in ra tổng tiền phải trả (đã tính VAT 10% và làm tròn)
     let total = 0;
     selectedProducts.forEach(product => {
         total += product.price * product.quantity;
     });
-
     const checkoutSummaryEl = document.getElementById('checkout-summary');
     const checkoutSummaryTotalEl = document.createElement('span');
     checkoutSummaryTotalEl.id = 'checkout-summary__total';
@@ -124,11 +128,13 @@ if (JSON.parse(localStorage.getItem('isLogin'))==null){
     checkoutSummaryTotalEl.appendChild(vatEl);
     checkoutSummaryEl.prepend(checkoutSummaryTotalEl);
 
+    //Gọi hàm để render ra sản phẩm
     renderProducts();
+
+    //Render phần thông tin người dùng (địa chỉ tự nhập)
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    document.getElementById('customer-name').value = currentUser.fullname;
+    document.getElementById('customer-phone').value = currentUser.phone;
+    document.getElementById('customer-email').value = currentUser.email;
 }
 
-//Render phần thông tin người dùng (địa chỉ tự nhập)
-const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-document.getElementById('customer-name').value = currentUser.fullname;
-document.getElementById('customer-phone').value = currentUser.phone;
-document.getElementById('customer-email').value = currentUser.email;

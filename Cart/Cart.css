@@ -173,23 +173,11 @@ body{
     left: 0;
     bottom: 0; 
     height: 60px;
+    padding: 12px;
     z-index: 999;
     background-color: var(--pale-blue-background-color);
     border: 1px solid var(--border-divider-color);
 }
-
-.cart-summary__left{
-    float:left;
-    padding: 12px;
-}
-
-.cart-summary__right{
-    float: right;
-    padding : 12px;
-    width: 200px;
-}
-
-
 
 #cart-summary__checkout-btn{
     float: right;

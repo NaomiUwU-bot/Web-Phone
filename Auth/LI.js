@@ -58,8 +58,6 @@
         }
     });
 
-
-
 ///HÀM LOGIN///
 function login(){
     ///KIỂM TRA KHI NHẤN NÚT///

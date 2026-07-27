@@ -154,14 +154,12 @@ body{
 }
 
 #checkout-summary__total{
-    align-self: start center;
     gap: 8px;
     color: #d70018;
     font-weight: 700;   
 }
 
 #checkout-summary__total span{
-    align-self: start;
     font-size: 12px;
     gap: 8px;
     color: var(--text-color);
@@ -171,7 +169,6 @@ body{
 
 
 #checkout-summary__back-btn{
-    float: right;
     background-color: #666666;
     color: white;
     border-radius: 5px;
@@ -181,7 +178,6 @@ body{
 }
 
 #checkout-summary__confirm-btn{
-    float: right;
     background-color: var(--button-color);
     color: white;
     border-radius: 5px;
@@ -191,8 +187,6 @@ body{
 }
 
 #checkout-summary__btn-wrap{
-    display:flex;
-    float:right;
     gap: 12px;
 }
 
